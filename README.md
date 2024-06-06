@@ -40,6 +40,8 @@ Dar um fork no projeto, clonar o repositório em sua máquina local e criar um b
 
 •	Pode utilizar tanto o Axios quanto ou Fetch para requisições.
 
+•	Hospedar o projeto em um servidor (Heroku, Vercel, Netlify)
+
 ## Diferenciais técnicos
 
 •	Utilização de typescript
