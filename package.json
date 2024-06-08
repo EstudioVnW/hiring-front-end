@@ -12,10 +12,12 @@
     },
     "dependencies": {
         "@phosphor-icons/react": "^2.1.5",
+        "axios": "^1.7.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.23.1",
-        "styled-components": "^6.1.11"
+        "styled-components": "^6.1.11",
+        "swiper": "^11.1.4"
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.3.0",

@@ -9,14 +9,26 @@ export const ContainerCard = styled.div`
     flex-direction: column;
     gap: 16px;
     width: 100%;
+    cursor: pointer;
+`;
+
+export const CardContainerImage = styled.figure`
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
 `;
 
 export const CardImage = styled.img`
     width: 100%;
     height: 100%;
-    border-radius: 4px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 `;
 
 export const CardBoxInfo = styled.div`

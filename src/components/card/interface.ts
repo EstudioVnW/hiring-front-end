@@ -5,11 +5,12 @@ export interface TextsProps {
 }
 
 export interface CardProps {
-    item: {
+    products: {
         id: string;
         name: string;
         createdAt: string;
         desciption: string;
-        price: string;
+        avatar: string;
+        price: number;
     };
 }

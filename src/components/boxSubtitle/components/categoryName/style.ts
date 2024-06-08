@@ -19,6 +19,11 @@ export const BorderBox = styled.div`
         width: 15px;
         height: 30px;
     }
+
+    @media (${devices.mobileL}) {
+        width: 12px;
+        height: 25px;
+    }
 `;
 
 export const CategoryName = styled.h2`
@@ -29,5 +34,9 @@ export const CategoryName = styled.h2`
 
     @media (${devices.tablet}) {
         font-size: 14px;
+    }
+
+    @media (${devices.mobileL}) {
+        font-size: 12px;
     }
 `;

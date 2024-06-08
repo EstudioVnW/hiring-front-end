@@ -18,4 +18,8 @@ export const Subtitle = styled.h3`
     @media (${devices.tablet}) {
         font-size: 24px;
     }
+    @media (${devices.mobileL}) {
+        font-size: 20px;
+        letter-spacing: normal;
+    }
 `;
