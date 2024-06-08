@@ -1,16 +1,10 @@
-import { useEffect, useState } from 'react'
 import './App.css'
+import { Shopping } from './screens/Shopping'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    
-  }, [])
-
   return (
     <>
-      <div>Hello</div>
+      <Shopping />
     </>
   )
 }
