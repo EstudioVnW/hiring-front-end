@@ -50,7 +50,7 @@ export const BoxLinks = styled.div`
 
 export const Title = styled.h1`
     font-size: 24px;
-    font-weight: 700;
+    font-weight: ${theme.fonts.weight.bold};
     line-height: 1.5;
     letter-spacing: 0.72px;
     color: ${theme.dark};
