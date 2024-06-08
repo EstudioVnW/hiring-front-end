@@ -5,7 +5,7 @@ import theme from '../../styles/theme';
 import { ButtonProps } from './interface';
 
 export const Button = styled.button<ButtonProps>`
-    padding: ${({ padding }) => padding || `48px 16px`};
+    padding: ${({ padding }) => padding || `16px 48px`};
     border: none;
     outline: none;
     border-radius: ${({ radius }) => radius || `4px`};
@@ -13,10 +13,20 @@ export const Button = styled.button<ButtonProps>`
     font-size: ${({ size }) => size || '16px'};
     font-weight: 500;
     line-height: 24px;
-    color: ${({ color }) => color || `${theme.dark}`};
+    color: ${({ color }) => color || `${theme.light}`};
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+        opacity: 0.8;
+    }
 
     @media (${devices.tablet}) {
-        padding: ${({ padding }) => padding || `24px 8px`};
+        font-size: ${({ size }) => size || '14px'};
+    }
+
+    @media (${devices.mobileL}) {
+        padding: 8px 24px;
         font-size: ${({ size }) => size || '14px'};
     }
 `;

@@ -1,5 +1,6 @@
 import { ButtonProps } from './interface';
+import * as S from './style';
 
 export default function Button(props: ButtonProps) {
-    return <button {...props}>{props.children}</button>;
+    return <S.Button {...props}>{props.children}</S.Button>;
 }

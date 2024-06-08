@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import devices from '../../styles/devices';
-import theme from '../../styles/theme';
+import devices from '../../../../styles/devices';
+import theme from '../../../../styles/theme';
 
 export const ContainerCategoryName = styled.div`
     display: flex;
