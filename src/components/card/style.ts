@@ -8,43 +8,15 @@ export const ContainerCard = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 270px;
-
-    @media (${devices.laptopL}) {
-        width: 220px;
-    }
-
-    @media (${devices.laptop}) {
-        width: 150px;
-        gap: 8px;
-    }
-
-    @media (${devices.mobileS}) {
-        width: 120px;
-    }
+    width: 100%;
 `;
 
 export const CardImage = styled.img`
-    width: 270px;
-    height: 270px;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-
-    @media (${devices.laptopL}) {
-        width: 220px;
-        height: 220px;
-    }
-
-    @media (${devices.laptop}) {
-        width: 150px;
-        height: 150px;
-    }
-
-    @media (${devices.mobileS}) {
-        width: 120px;
-        height: 120px;
-    }
 `;
 
 export const CardBoxInfo = styled.div`

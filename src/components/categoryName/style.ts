@@ -14,6 +14,11 @@ export const BorderBox = styled.div`
     height: 40px;
     border-radius: 4px;
     background: ${theme.accent};
+
+    @media (${devices.tablet}) {
+        width: 15px;
+        height: 30px;
+    }
 `;
 
 export const CategoryName = styled.h2`
