@@ -1,10 +1,29 @@
 import './App.css'
-import { Shopping } from './screens/Shopping'
+import { Footer } from './components/Footer'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { Shopping } from './screens/Shopping';
+import { Cart } from './screens/Cart';
+
 
 function App() {
+  const routers = createBrowserRouter([
+    {
+      path: '/',
+      element: <Shopping />,
+    },
+    {
+      path: 'cart',
+      element: <Cart />
+    }
+  ])
+  
   return (
     <>
-      <Shopping />
+      <RouterProvider router={routers} />
+      <Footer />
     </>
   )
 }

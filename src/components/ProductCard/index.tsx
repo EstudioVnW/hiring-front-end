@@ -12,13 +12,17 @@ export const ProductCard: FunctionComponent<ProductCardProps> = ({
   const {name, avatar, desciption, price} = product
   
   return <S.ProductContainer>
-    <img className="avatar" src={avatar} alt="" />
+    <figure className="avatar">
+      <img className="avatar" src={avatar} alt="product image" />
+    </figure>
     <S.InfoContent>
       <h1 className="name">{name}</h1>
       <p className="description">{desciption}</p>
       <div className="price">
         <p>${price}</p>
       </div>
+
+      <button className="add-to-cart-button">Add to Cart</button>
     </S.InfoContent>
 
 
