@@ -1,51 +1,70 @@
+# Getting Started with Create React App
 
-## Objetivo
-Construir uma aplicação web em ReactJS que tenha o comportamento de um e-commerce.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Como começar
-Dar um fork no projeto, clonar o repositório em sua máquina local e criar um branch novo para o seu código.
+## Available Scripts
 
+In the project directory, you can run:
 
-## Regras de negócio
-•	Ao acessar a home, trazer a listagem de produtos vinda da API de referência.  
+### `npm start`
 
-•	Ao digitar no campo de busca, deve-se trazer somente os resultados digitados.  
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-•	Ao clicar no botão "Adicionar ao carrinho", deve-se inserir o produto ao carrinho de compras.  
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-•	No carrinho de compras, pode-se remover os produtos.  
+### `npm test`
 
-•	No carrinho de compras, deve-se informar o total da compra.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run build`
 
-## Referências
-•	API de produtos: https://62d742f351e6e8f06f1a83da.mockapi.io/api/produtos
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Observações
-1. Não é necessário se preocupar com CORS ou implementar um backend para fazer as requisições. A API de produtos permite chamadas diretas do navegador.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-2. Design de livre escolha.
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## Requisitos Técnicos para a entrega do teste
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-•	Pode utilizar qualquer library de CSS e CSS-in-JS. (recomendamos Material UI, Bootstrap ou Styled Components. Pode fazer com CSS clássico também)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-•	O projeto deve ter uma documentação em readme ensinando a: 
-1. instalar o projeto na máquina (engines, versão de node, qual gerenciador de pacote usar)
-2. instalar as dependências do projeto
-3. rodar o ambiente de desenvolvimento
-4. rodar a build de deploy da aplicação.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-•	Pode utilizar tanto o Axios quanto ou Fetch para requisições.
+## Learn More
 
-•	Hospedar o projeto em um servidor (Heroku, Vercel, Netlify)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Diferenciais técnicos
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-•	Utilização de typescript
+### Code Splitting
 
-•	Bom uso de context api ou outro gerenciamento de estados
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Boa sorte!
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
