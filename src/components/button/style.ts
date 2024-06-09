@@ -5,6 +5,7 @@ import theme from '../../styles/theme';
 import { ButtonProps } from './interface';
 
 export const Button = styled.button<ButtonProps>`
+    width: fit-content;
     padding: ${({ padding }) => padding || `16px 48px`};
     border: none;
     outline: none;

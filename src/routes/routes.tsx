@@ -6,11 +6,13 @@ import {
 
 import DefaultLayout from '../layout/defaultLayout';
 import Home from '../pages/home';
+import Product from '../pages/product';
 
 const Router = createBrowserRouter(
     createRoutesFromElements(
         <Route element={<DefaultLayout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/products/:id" element={<Product />} />
         </Route>,
     ),
 );
