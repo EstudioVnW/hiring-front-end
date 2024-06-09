@@ -1,8 +1,30 @@
-# React + Vite
+# e-commerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto que simula um e-commerce, construído com React.js.
 
-Currently, two official plugins are available:
+## Pré-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js (Foi utilizada a versão 20.14.0)
+- npm (que vem com o Node.js)
+- VScode (ultima versão disponivel)
+## Instalação
+
+Siga os passos abaixo para instalar o projeto na sua máquina:
+
+1. Clone o repositório para a sua máquina local usando `git clone https://github.com/GiulianoBotelho/E-commerce-VNW`
+
+2. Navegue até a pasta do projeto usando `cd e-commerce`
+
+3. Instale as dependências do projeto. Execute `npm install`.
+
+## Rodando o Ambiente de Desenvolvimento
+
+Depois de instalar as dependências, você pode iniciar o servidor de desenvolvimento:
+
+bash
+npm start
+
+Build de Deploy
+Para criar uma build de produção, execute:
+
+npm run build
