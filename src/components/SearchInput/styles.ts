@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const InputContainer = styled.input`
+export const Input = styled.input`
   min-width: 500px;
   border-radius: 5px;
   padding: 0 10px;
@@ -14,5 +14,10 @@ export const InputContainer = styled.input`
   
   &:focus {
     outline: rgb(255, 164, 28) solid 2px;
+  }
+
+  @media (max-width: 720px) {
+    width: 100%;
+    min-width: 0;
   }
 `

@@ -1,7 +1,11 @@
 import * as S from './styles'
 
-export const SearchInput = () => {
+type SearchInputProps = {
+  handleSearch: (e: React.FormEvent<HTMLInputElement>) => void
+}
+
+export const SearchInput = ({ handleSearch }: SearchInputProps) => {
   return (
-    <S.InputContainer placeholder='Search a product' />
+    <S.Input onChange={handleSearch} placeholder='Search a product' />
   )
 }

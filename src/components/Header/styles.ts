@@ -23,5 +23,9 @@ export const HeaderContainer = styled.header`
     flex-direction: row;
     height: 50px;
     gap: 30px;
+
+    @media (max-width: 720px) {
+      gap: 5px;
+    }
   }
 `

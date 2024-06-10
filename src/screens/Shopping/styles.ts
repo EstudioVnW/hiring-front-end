@@ -13,10 +13,29 @@ export const ShoppingContainer = styled.div`
   background-color: #fff;
   margin: 0;
   position: relative;
-  margin-top: 480px;
 
-  > section {
-    position: relative;
-    top: -150px;
+  .banner {
+    width: 100px;
+    @media (max-width: 720px) {
+      display: none;
+    }
+  }
+
+  .limit-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 40px;
+    max-width: 1280px;
+    margin-bottom: 40px;
+    margin-top: 100px;
+    min-height: 100vh;
+
+    @media (min-width: 720px) {
+      position: relative;
+      top: -200px;
+      margin-top: none;
+    }
   }
 `
