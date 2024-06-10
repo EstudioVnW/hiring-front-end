@@ -2,7 +2,7 @@ import { Product } from '@/types'
 import { Link } from 'react-router-dom'
 
 export default function Card(product: Product) {
-  const imageUrl = `${product.avatar}?random=${product.id}`
+  const imageUrl = `${product.avatar}?random=${product.id} `
   return (
     <div className="w-40 rounded-md overflow-hidden shadow-md  hover:text-blue-700">
       <Link

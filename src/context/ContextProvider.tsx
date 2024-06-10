@@ -1,3 +1,4 @@
+import Loading from '@/components/loading'
 import { Product } from '@/types'
 import { createContext, useContext, useEffect, useState } from 'react'
 
@@ -30,7 +31,7 @@ export default function ContextProvider({ children }: ContextProviderProps) {
       })
   }, [])
 
-  if (loading) return <div>Carregando...</div>
+  if (loading) return <Loading />
   if (error) return <div>Error ao tenta fazer fetch dos dados</div>
 
   return <StateContext.Provider value={data}>{children}</StateContext.Provider>
