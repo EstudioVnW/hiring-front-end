@@ -17,8 +17,10 @@ export default function Product() {
     const { id } = useParams();
     const { addToCart } = useContext(CartContext);
 
-    const product = products.filter((item) => item.id === id);
-    const otherProduct = products.filter((item) => item.id !== id).slice(0, 4);
+    const product = products.filter((item) => item.id === Number(id));
+    const otherProduct = products
+        .filter((item) => item.id !== Number(id))
+        .slice(0, 4);
 
     useEffect(() => {
         window.scrollTo(0, 0);

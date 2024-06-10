@@ -6,7 +6,7 @@ export interface TextsProps {
 
 export interface CardProps {
     products: {
-        id: string;
+        id: number;
         name: string;
         createdAt: string;
         desciption: string;
