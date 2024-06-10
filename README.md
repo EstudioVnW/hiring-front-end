@@ -2,7 +2,12 @@
 
 ## Descrição
 
-Projeto front-end para o processo de contratação. Este projeto é configurado com React e styled-components que utiliza várias bibliotecas para auxiliar no desenvolvimento da interfaces do usuário.
+Este repositório contém um projeto de e-commerce chamado YourWeb, desenvolvido como parte de um desafio para a contratação de desenvolvedores front-end. O projeto tem como objetivo avaliar as habilidades dos candidatos em criar interfaces de usuário utilizando React e outras bibliotecas modernas.
+
+O projeto inclui funcionalidades essenciais de um e-commerce, como navegação entre páginas de produtos, visualização de detalhes dos produtos, e integração com uma API para gerenciamento de dados. Além disso, foram utilizados componentes estilizados para garantir uma interface atraente e responsiva.
+
+Feito com o objetivo de identificar desenvolvedores talentosos e qualificados para integrar nossa equipe.
+
 
 ## Pré-requisitos
 
