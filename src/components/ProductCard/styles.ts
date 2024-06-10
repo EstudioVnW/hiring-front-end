@@ -9,6 +9,7 @@ export const ProductContainer = styled.section`
   border: 1px solid #d5d9d9;;
   cursor: pointer;
   overflow: auto;
+  height: min-content;
 
   .avatar {
     width: 100%;
