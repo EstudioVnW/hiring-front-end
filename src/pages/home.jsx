@@ -33,7 +33,9 @@ export default function ECommerce() {
   }, []);
 
   useEffect(() => {
-    if (cart) setCart(getItem("itemInCart"));
+    if (cart.length !== 0 && getItem("itemInCart").length !== 0)
+      setCart(getItem("itemInCart"));
+    else setCart([]);
   }, []);
 
   const productsFiltred = products.filter((item) =>
@@ -55,7 +57,9 @@ export default function ECommerce() {
 
   const verifyItemSeach = productsFiltred.length !== 0;
   const verifyItemSelecById = (product) =>
-    cart && cart.some((itemCart) => itemCart.id === product.id);
+    cart.length !== 0
+      ? cart.some((itemCart) => itemCart.id === product.id)
+      : null;
 
   return (
     <section>
