@@ -26,6 +26,7 @@ const Cart = () => {
           <S.CardProductCartTitle>
             PRODUCTS IN YOUR CART:
           </S.CardProductCartTitle>
+
           <S.CardProductCartDescription>
             Lorem ipsum dolor sit amet consectetur adipisicing elit, Mollitia et
             fuga facere repellat tempore fugit dolorem nihil odio.
@@ -37,16 +38,20 @@ const Cart = () => {
               return (
                 <S.CardCart key={item.id}>
                   <S.CardCartImage src={item.avatar} alt={item.name} />
+
                   <S.CardContentDescription>
                     <S.CardContainerTitle>
                       <S.CardTitle>{item.name}</S.CardTitle>
+
                       <S.CardRatingIcon
                         value={rating}
                         onChange={setRating}
                         itemStyles={myStyles}
                       />
                     </S.CardContainerTitle>
+
                     <S.CardDescription>{item.desciption}</S.CardDescription>
+
                     <S.CardPriceContainer>
                       <S.CardPrice>
                         <S.CardPriceSpan>R$</S.CardPriceSpan>
