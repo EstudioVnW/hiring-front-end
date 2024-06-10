@@ -104,7 +104,7 @@ function App() {
           {FiltrarProdutos.length > 0 ? ( //Operador ternário para garantir que sejam listados apenas os itens existentes na API. caso contrário, uma mensagem de produto não encontrado sera renderizada.
             FiltrarProdutos.map((item) => ( //Novamente o map para listar os produtos da API na página principal.
               <figure key={item.id}>
-                <img src={item.avatar} alt={item.desciption} />
+                <img src={`${item.avatar}?${item.id}`} alt={item.desciption} />
                 <figcaption>{item.name}</figcaption>
                 <p>{item.desciption}</p>
                 <p>${item.price}</p>
