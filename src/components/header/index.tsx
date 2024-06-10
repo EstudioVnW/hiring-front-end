@@ -1,16 +1,37 @@
 import { List, MagnifyingGlass, ShoppingCart, X } from '@phosphor-icons/react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import {
+    Link,
+    useLocation,
+    useNavigate,
+    useSearchParams,
+} from 'react-router-dom';
 
 import { navLinks } from '../../mocks/navLinks';
 import * as S from './style';
 
 export default function Header() {
+    const [searchParams, setSearchParams] = useSearchParams();
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
+    const [searchTerm, setSearchTerm] = useState<string>(
+        searchParams.get('search') || '',
+    );
 
-    const toggleMenu = () => {
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
+
+    function toggleMenu() {
         setMenuOpen(!menuOpen);
-    };
+    }
+
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        if (pathname !== '/all') {
+            setSearchTerm('');
+            setSearchParams({});
+        }
+        navigate(`/all?search=${searchTerm}`);
+    }
 
     return (
         <S.Header>
@@ -40,10 +61,12 @@ export default function Header() {
                     </S.MenuButton>
 
                     <S.HeaderBoxSearch>
-                        <S.SearchBar>
+                        <S.SearchBar onSubmit={handleSubmit}>
                             <S.InputSearch
                                 type="text"
                                 placeholder="O que você está procurando?"
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                value={searchTerm}
                             />
                             <S.BtnTransparent search type="submit">
                                 <MagnifyingGlass size={20} />
