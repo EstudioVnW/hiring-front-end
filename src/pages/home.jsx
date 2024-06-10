@@ -43,8 +43,8 @@ export default function ECommerce() {
   );
 
   const addedProductToCart = (id, products) => {
-    const hasElementInCart = cart.find((item) => item.id === id);
-    const removedElementInCart = cart.filter((item) => item.id !== id);
+    const hasElementInCart = cart?.find((item) => item.id === id);
+    const removedElementInCart = cart?.filter((item) => item.id !== id);
 
     if (hasElementInCart) {
       setCart([...removedElementInCart]);
@@ -58,7 +58,7 @@ export default function ECommerce() {
   const verifyItemSeach = productsFiltred.length !== 0;
   const verifyItemSelecById = (product) =>
     cart.length !== 0
-      ? cart.some((itemCart) => itemCart.id === product.id)
+      ? cart?.some((itemCart) => itemCart.id === product.id)
       : null;
 
   return (
