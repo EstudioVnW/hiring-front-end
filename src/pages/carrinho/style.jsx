@@ -72,14 +72,19 @@ export const CarrinhoItem = styled.main `
             color: gray;
         }
         button {
-            background-color: #f13131;
-            letter-spacing: 1px;
-            font-size: .75rem;
-            font-weight: 700;
+            display: flex;
+            width: fit-content;
             border: none;
-            padding: .25rem 1rem;
             cursor: pointer;
             border-radius: 6px;
+            
+            img {
+                width: 20px;
+                transition: filter .1s ease;
+            }
+            img:hover {
+                filter: brightness(0) saturate(100%) invert(35%) sepia(32%) saturate(3285%) hue-rotate(333deg) brightness(91%) contrast(109%);
+            }
         }
     }
 `

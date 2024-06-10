@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as S from "./style.jsx"
+import Trash from "../../assets/icons/trash.svg"
 
 export default function Carrinho({carrinho}) { // Recebendo a lista de items do carrinho
 
@@ -27,7 +28,7 @@ export default function Carrinho({carrinho}) { // Recebendo a lista de items do 
                     {item[5]} Unidade(s)
                 </h4>
             <button onClick={() => excluir(item)}>
-                Excluir Item
+                <img src={Trash} alt="" />
             </button>
             </div>
         </S.CarrinhoItem>
@@ -55,7 +56,7 @@ export default function Carrinho({carrinho}) { // Recebendo a lista de items do 
                             {item[5]} Unidade(s)
                         </h4>
                     <button onClick={() => excluir(item)}>
-                        Excluir Item
+                        <img src={Trash} alt="" />
                     </button>
                     </div>
                 </S.CarrinhoItem>)))
