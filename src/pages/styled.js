@@ -597,15 +597,6 @@ const Icon = styled(MdSearchOff)`
   }
 `;
 
-const TextContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-
-  @media (max-width: 768px) {
-    align-items: center;
-  }
-`;
-
 const Message = styled.h1`
   font-size: 24px;
   color: #495057;

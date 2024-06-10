@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import * as S from "./styled";
 import MenuModal from "./modal";
-
-import { BsBagHeartFill } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
 
 export default function Header() {

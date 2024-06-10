@@ -15,7 +15,6 @@ export default function ECommerce() {
   const [isLoading, setIsLoading] = useState(true);
   const [filterValue, setFilterValue] = useState("");
   const [rating, setRating] = useState(0);
-  const [renderElement, setRenderElement] = useState(10);
 
   const fetchProducts = () => {
     axios
@@ -28,9 +27,8 @@ export default function ECommerce() {
 
   useEffect(() => {
     fetchProducts();
-
     if (cart) setCart(getItem("itemInCart"));
-  }, []);
+  }, [cart]);
 
   const productsFiltred = products.filter((item) =>
     item.name.toLocaleLowerCase().includes(filterValue.toLocaleLowerCase())
@@ -48,13 +46,6 @@ export default function ECommerce() {
       setItem("itemInCart", [...cart, products]);
     }
   };
-
-  // const renderProducts = (valueRender) => {
-  //   if (renderElement >= 40) setRenderElement(renderElement - valueRender);
-  //   else  if
-  //     renderElement >= 1 {setRenderElement(renderElement + valueRender)} : null;
-  //   return;
-  // };
 
   const verifyItemSeach = productsFiltred.length !== 0;
   const verifyItemSelecById = (product) =>
@@ -147,13 +138,6 @@ export default function ECommerce() {
             <div>Carregando...</div>
           )}
         </S.Child>
-        <S.CartRenderContainer>
-          {/* <S.CartRenderButton onClick={() => renderProducts(10)}>
-            {/* {renderElement >= 40 */}
-          {/* "Reduce product display" : renderElement === 0 ? "Expand product
-          display" : null */}
-          {/* </S.CartRenderButton> */}
-        </S.CartRenderContainer>
       </S.Container>
 
       <S.Foot>

@@ -1,8 +1,7 @@
 import React from "react";
 import * as S from "../styled";
 
-import { BsBagHeartFill } from "react-icons/bs";
-import { IoMenu, IoClose } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 export default function MenuModal({ actionClose = () => {}, setOpenModal }) {
   return (

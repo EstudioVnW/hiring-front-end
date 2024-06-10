@@ -1,6 +1,6 @@
 import React from "react";
 import ECommerce from "./pages/home";
-import { Route, Router, Routes, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Cart from "./pages/cart";
 import Header from "./components/header/index";

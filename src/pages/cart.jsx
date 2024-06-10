@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TfiShoppingCart, TfiShoppingCartFull } from "react-icons/tfi";
+import { TfiShoppingCartFull } from "react-icons/tfi";
 import { getItem, setItem } from "../utils/localStorege";
 import { myStyles } from "./styled";
 import * as S from "./styled";
