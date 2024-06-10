@@ -36,8 +36,7 @@ export default function Carrinho({carrinho}) { // Recebendo a lista de items do 
 
     // Função para excluir item do carrinho
     const excluir = (item) => {
-        carrinho.shift(item)
-
+        carrinho.splice(carrinho.indexOf(item), 1)
         // Set timout para atualizar a lista de items do carrinho após a exclusão
         setTimeout(() => {
             setMap(carrinho.map((item) => (
