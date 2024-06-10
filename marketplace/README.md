@@ -7,7 +7,7 @@ Este projeto simula uma página de e-commerce utilizando React.
 Instale na sua maquina:
 - **Node.js** (utilizei a versão: 20.14.0)
 - **npm** (Nativo do node.js)
-
+- Vscode (utilizei a ultima versão disponivel)
 ## Instalação
 
 Para instalar o projeto, siga estas etapas:
