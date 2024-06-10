@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./styled";
+import MenuModal from "./modal";
 
 import { BsBagHeartFill } from "react-icons/bs";
+import { IoMenu } from "react-icons/io5";
 
-export default function () {
+export default function Header() {
+  const [isOpenModal, setOpenModal] = useState(false);
+
+  const openModalMenu = () => {
+    setOpenModal(!isOpenModal);
+  };
+
+  const closeModal = (e) => {
+    if (e.target.id === "modal") setOpenModal(false);
+  };
+
   return (
     <section>
       <S.Header>
         <S.HeaderNav>
+          <S.HeaderNavMenu onClick={() => openModalMenu()}>
+            <IoMenu size={30} />
+          </S.HeaderNavMenu>
+
+          {isOpenModal && (
+            <MenuModal
+              actionClose={(e) => closeModal(e)}
+              setOpenModal={setOpenModal}
+            />
+          )}
+
           <S.NavContent>
             <S.Nav>
               <ul>
@@ -37,7 +60,7 @@ export default function () {
             </div>
             <div>
               <S.BagCart to="/cart">
-                <BsBagHeartFill size={24} className="icon-cart" />
+                <S.BagCartIcon size={24} />
               </S.BagCart>
             </div>
           </S.Icons>
