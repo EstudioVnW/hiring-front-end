@@ -1,5 +1,5 @@
 import { ArrowUUpLeft, Package } from '@phosphor-icons/react';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import BoxSubtitle from '../../components/boxSubtitle';
@@ -7,6 +7,7 @@ import Button from '../../components/button';
 import Card from '../../components/card';
 import Container from '../../components/container';
 import Loading from '../../components/loading';
+import { CartContext } from '../../contexts/cartContext';
 import useApi from '../../hooks/useApi';
 import { ProductsProps } from '../../interfaces/productsProps';
 import * as S from './style';
@@ -14,6 +15,7 @@ import * as S from './style';
 export default function Product() {
     const { products, loading } = useApi();
     const { id } = useParams();
+    const { addToCart } = useContext(CartContext);
 
     const product = products.filter((item) => item.id === id);
     const otherProduct = products.filter((item) => item.id !== id).slice(0, 4);
@@ -43,7 +45,9 @@ export default function Product() {
                         <S.ProductText>{item.desciption}</S.ProductText>
 
                         <S.ProductText>Em estoque</S.ProductText>
-                        <Button padding="12px">Adicionar ao carrinho</Button>
+                        <Button padding="12px" onClick={() => addToCart(item)}>
+                            Adicionar ao carrinho
+                        </Button>
 
                         <S.BoxInfos>
                             <S.InlineContent border>
