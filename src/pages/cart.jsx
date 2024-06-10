@@ -15,7 +15,7 @@ const Cart = () => {
     setCartElement(removedElement);
     setItem("itemInCart", removedElement);
   };
-  const sumPriceValue = cartElement.reduce(
+  const sumPriceValue = cartElement?.reduce(
     (acc, cur) => Number(acc) + Number(cur.price),
     0
   );

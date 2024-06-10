@@ -33,7 +33,7 @@ export default function ECommerce() {
   }, []);
 
   useEffect(() => {
-    if (cart.length !== 0 && getItem("itemInCart").length !== 0)
+    if (cart.length !== 0 || getItem("itemInCart").length !== 0)
       setCart(getItem("itemInCart"));
     else setCart([]);
   }, []);
@@ -45,6 +45,9 @@ export default function ECommerce() {
   const addedProductToCart = (id, products) => {
     const hasElementInCart = cart?.find((item) => item.id === id);
     const removedElementInCart = cart?.filter((item) => item.id !== id);
+
+    console.log("cart", cart);
+    console.log('getItem("itemInCart")', getItem("itemInCart"));
 
     if (hasElementInCart) {
       setCart([...removedElementInCart]);
