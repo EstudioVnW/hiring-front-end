@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { Shopping } from './screens/Shopping';
 import { Cart } from './screens/Cart';
+import { CartProvider } from './contexts/Cart/cart.context';
 
 
 function App() {
@@ -22,8 +23,10 @@ function App() {
   
   return (
     <>
-      <RouterProvider router={routers} />
-      <Footer />
+      <CartProvider>
+        <RouterProvider router={routers} />
+        <Footer />
+      </CartProvider>
     </>
   )
 }

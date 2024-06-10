@@ -3,11 +3,17 @@ import { FunctionComponent } from "react"
 import * as S from './styles'
 
 type ProductCardProps = {
-  product: ProductDTO
+  product: ProductDTO,
+  handleAddItem: (item: ProductDTO) => void
+  handleRemoveItem: (id: string) => void
+  onCart?: boolean
 }
 
 export const ProductCard: FunctionComponent<ProductCardProps> = ({
-  product
+  product,
+  handleAddItem,
+  handleRemoveItem,
+  onCart
 }) => {
   const {name, avatar, desciption, price} = product
   
@@ -22,7 +28,12 @@ export const ProductCard: FunctionComponent<ProductCardProps> = ({
         <p>${price}</p>
       </div>
 
-      <button className="add-to-cart-button">Add to Cart</button>
+      {
+        onCart ? 
+          <button onClick={() => handleRemoveItem(product.id)} className="add-to-cart-button">Remove item</button> 
+          : <button onClick={() => handleAddItem(product)} className="add-to-cart-button">Add to Cart</button>
+      }
+      
     </S.InfoContent>
 
 
