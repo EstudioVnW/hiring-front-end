@@ -77,7 +77,7 @@ export default function Header() {
 
                         <S.BtnTransparent>
                             <Link to="/cart">
-                                <ShoppingCart size={24} />
+                                <ShoppingCart color="#000" size={24} />
                             </Link>
                             {quantityProductInCart > 0 && (
                                 <S.Badge>{quantityProductInCart}</S.Badge>

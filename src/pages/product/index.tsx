@@ -1,4 +1,5 @@
 import { ArrowUUpLeft, Package } from '@phosphor-icons/react';
+import { toast } from 'react-toastify';
 
 import BoxSubtitle from '../../components/boxSubtitle';
 import Button from '../../components/button';
@@ -11,6 +12,13 @@ import * as S from './style';
 
 export default function Product() {
     const { product, loading, addToCart, otherProducts } = useApi();
+
+    function addCart() {
+        if (product) {
+            addToCart(product);
+            toast.success('Produto adicionado ao carrinho!');
+        }
+    }
 
     if (loading) {
         return <Loading />;
@@ -32,11 +40,11 @@ export default function Product() {
 
                 <S.ProductContent>
                     <S.ProductName>{product.name}</S.ProductName>
-                    <S.ProductPrice>R$ 45,00</S.ProductPrice>
+                    <S.ProductPrice>R$ {product.price}</S.ProductPrice>
                     <S.ProductText>{product.description}</S.ProductText>
 
                     <S.ProductText>Em estoque</S.ProductText>
-                    <Button padding="12px" onClick={() => addToCart(product)}>
+                    <Button padding="12px" onClick={addCart}>
                         Adicionar ao carrinho
                     </Button>
 

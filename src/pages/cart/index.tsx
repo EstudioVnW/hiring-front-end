@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { toast } from 'react-toastify';
 
 import Button from '../../components/button';
 import Container from '../../components/container';
@@ -8,6 +9,11 @@ import * as S from './style';
 export default function CartPage() {
     const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } =
         useContext(CartContext);
+
+    function finalizePurchase() {
+        toast.success('Compra finalizada com sucesso!');
+        clearCart();
+    }
 
     if (cartItems.length === 0) {
         return (
@@ -75,13 +81,7 @@ export default function CartPage() {
                     <S.TextCart>R$ {getCartTotal()}</S.TextCart>
                 </S.ContainerContent>
 
-                <Button
-                    onClick={() => {
-                        clearCart();
-                    }}
-                >
-                    Esvaziar carrinho
-                </Button>
+                <Button onClick={finalizePurchase}>Comprar</Button>
             </S.BoxCartTotal>
         </Container>
     );
