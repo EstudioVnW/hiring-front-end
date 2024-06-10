@@ -56,7 +56,7 @@ export const Title = styled.h1`
     color: ${theme.dark};
 `;
 
-export const HeaderNav = styled.nav<{ menuOpen: boolean }>`
+export const HeaderNav = styled.nav<{ $menuOpen: boolean }>`
     display: flex;
     gap: 48px;
     transition: all 0.3s ease-in-out;
@@ -86,10 +86,10 @@ export const HeaderNav = styled.nav<{ menuOpen: boolean }>`
         flex-direction: column;
         background: ${theme.lightForegroud};
         padding: 100px 20px 20px 20px;
-        transform: ${({ menuOpen }) =>
-            menuOpen ? 'translateY(0)' : 'translateY(-100%)'};
-        opacity: ${({ menuOpen }) => (menuOpen ? '1' : '0')};
-        visibility: ${({ menuOpen }) => (menuOpen ? 'visible' : 'hidden')};
+        transform: ${({ $menuOpen }) =>
+            $menuOpen ? 'translateY(0)' : 'translateY(-100%)'};
+        opacity: ${({ $menuOpen }) => ($menuOpen ? '1' : '0')};
+        visibility: ${({ $menuOpen }) => ($menuOpen ? 'visible' : 'hidden')};
 
         a {
             font-size: 18px;
@@ -143,15 +143,15 @@ export const InputSearch = styled.input`
     background: ${theme.lightForegroud};
 `;
 
-export const BtnTransparent = styled.button<{ search?: boolean }>`
+export const BtnTransparent = styled.button<{ $search?: boolean }>`
     position: relative;
     background: transparent;
     border: none;
     outline: none;
     cursor: pointer;
 
-    ${({ search }) =>
-        search &&
+    ${({ $search }) =>
+        $search &&
         css`
             position: absolute;
             right: 8px;

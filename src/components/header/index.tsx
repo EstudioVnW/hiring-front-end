@@ -50,7 +50,7 @@ export default function Header() {
                         <S.Title>Exlusive</S.Title>
                     </Link>
 
-                    <S.HeaderNav menuOpen={menuOpen}>
+                    <S.HeaderNav $menuOpen={menuOpen}>
                         {navLinks.map((item) => (
                             <Link to={item.link} key={item.name}>
                                 {item.name}
@@ -70,7 +70,7 @@ export default function Header() {
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 value={searchTerm}
                             />
-                            <S.BtnTransparent search type="submit">
+                            <S.BtnTransparent $search type="submit">
                                 <MagnifyingGlass size={20} />
                             </S.BtnTransparent>
                         </S.SearchBar>
