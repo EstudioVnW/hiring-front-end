@@ -9,12 +9,13 @@ import { myStyles } from "./styled";
 import * as S from "./styled";
 import axios from "axios";
 
-export const ECommerce = () => {
+export default function ECommerce() {
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [filterValue, setFilterValue] = useState("");
   const [rating, setRating] = useState(0);
+  const [renderElement, setRenderElement] = useState(10);
 
   const fetchProducts = () => {
     axios
@@ -27,20 +28,17 @@ export const ECommerce = () => {
 
   useEffect(() => {
     fetchProducts();
+
+    if (cart) setCart(getItem("itemInCart"));
   }, []);
 
   const productsFiltred = products.filter((item) =>
     item.name.toLocaleLowerCase().includes(filterValue.toLocaleLowerCase())
   );
 
-  if (isLoading) {
-    return <div>Carregando...</div>;
-  }
   const addedProductToCart = (id, products) => {
     const hasElementInCart = cart.find((item) => item.id === id);
     const removedElementInCart = cart.filter((item) => item.id !== id);
-
-    console.log(id);
 
     if (hasElementInCart) {
       setCart([...removedElementInCart]);
@@ -51,7 +49,16 @@ export const ECommerce = () => {
     }
   };
 
+  // const renderProducts = (valueRender) => {
+  //   if (renderElement >= 40) setRenderElement(renderElement - valueRender);
+  //   else  if
+  //     renderElement >= 1 {setRenderElement(renderElement + valueRender)} : null;
+  //   return;
+  // };
+
   const verifyItemSeach = productsFiltred.length !== 0;
+  const verifyItemSelecById = (product) =>
+    cart.some((itemCart) => itemCart.id === product.id);
 
   return (
     <section>
@@ -82,65 +89,81 @@ export const ECommerce = () => {
 
       <S.Container>
         <S.Child>
-          <S.CardContainer>
-            {verifyItemSeach ? (
-              productsFiltred.map((product) => {
-                console.log(
-                  getItem("itemInCart").some(
-                    (itemCart) => itemCart.id === product.id
-                  ),
-                  product.id
-                );
-
-                return (
-                  <S.Card key={product.id}>
-                    {/* <S.CardTitle>CreatedAt: {product.createdAt}</S.CardTitle> */}
-
-                    <S.CardImage src={product.avatar} alt={product.name} />
-
-                    <S.CardContentDescription>
-                      <S.CardContainerTitle>
-                        <S.CardTitle>{product.name}</S.CardTitle>
-                        <S.CardRatingIcon
-                          value={rating}
-                          onChange={setRating}
-                          itemStyles={myStyles}
-                        />
-                      </S.CardContainerTitle>
-                      <S.CardDescription>
-                        {product.desciption}
-                      </S.CardDescription>
-                      <S.CardPriceContainer>
-                        <S.CardPrice>
-                          <S.CardPriceSpan>R$</S.CardPriceSpan>
-                          {product.price}
-                        </S.CardPrice>
-                        <S.CardButton
-                          onClick={() => {
-                            addedProductToCart(product.id, product);
-                          }}
-                        >
-                          {getItem("itemInCart").some(
-                            (itemCart) => itemCart.id === product.id
-                          ) ? (
-                            <TfiShoppingCartFull size={24} color="red" />
-                          ) : (
-                            <TfiShoppingCart size={24} />
-                          )}
-                        </S.CardButton>
-                      </S.CardPriceContainer>
-                    </S.CardContentDescription>
-                  </S.Card>
-                );
-              })
-            ) : (
-              <>
-                <p>Nenhum elemento encontrado</p>
-              </>
-            )}
-          </S.CardContainer>
+          {!isLoading ? (
+            <S.CardContainer>
+              {verifyItemSeach ? (
+                productsFiltred.map((product) => {
+                  return (
+                    <S.Card key={product.id}>
+                      <S.CardImage src={product.avatar} alt={product.name} />
+                      <S.CardContentDescription>
+                        <S.CardContainerTitle>
+                          <S.CardTitle>{product.name}</S.CardTitle>
+                          <S.CardRatingIcon
+                            value={rating}
+                            onChange={setRating}
+                            itemStyles={myStyles}
+                          />
+                        </S.CardContainerTitle>
+                        <S.CardDescription>
+                          {product.desciption}
+                        </S.CardDescription>
+                        <S.CardPriceContainer>
+                          <S.CardPrice>
+                            <S.CardPriceSpan>R$</S.CardPriceSpan>
+                            {product.price}
+                          </S.CardPrice>
+                          <S.CardButton
+                            onClick={() => {
+                              addedProductToCart(product.id, product);
+                            }}
+                          >
+                            {verifyItemSelecById(product) ? (
+                              <TfiShoppingCartFull size={24} color="red" />
+                            ) : (
+                              <TfiShoppingCart size={24} />
+                            )}
+                          </S.CardButton>
+                        </S.CardPriceContainer>
+                      </S.CardContentDescription>
+                    </S.Card>
+                  );
+                })
+              ) : (
+                <S.NotFoundContainer>
+                  <S.Icon size={64} />
+                  <div>
+                    <S.Message>Sorry, No items found... </S.Message>
+                    <S.Label>
+                      Try adjusting your search criteria, checking for possible
+                      typos, or resetting the applied filters. If the problem
+                      persists, please contact support for assistance.
+                    </S.Label>
+                  </div>
+                </S.NotFoundContainer>
+              )}
+            </S.CardContainer>
+          ) : (
+            <div>Carregando...</div>
+          )}
         </S.Child>
+        <S.CartRenderContainer>
+          {/* <S.CartRenderButton onClick={() => renderProducts(10)}>
+            {/* {renderElement >= 40 */}
+          {/* "Reduce product display" : renderElement === 0 ? "Expand product
+          display" : null */}
+          {/* </S.CartRenderButton> */}
+        </S.CartRenderContainer>
       </S.Container>
+
+      <S.Foot>
+        <S.Brand>YourWeb</S.Brand>
+        <S.List>
+          <li>
+            <S.LinkList to="/">Home</S.LinkList>
+          </li>
+        </S.List>
+      </S.Foot>
     </section>
   );
-};
+}
