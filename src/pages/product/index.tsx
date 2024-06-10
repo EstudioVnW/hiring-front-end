@@ -1,7 +1,7 @@
 import { ArrowUUpLeft, Package } from '@phosphor-icons/react';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-import Speakers from '../../assets/speakers.png';
 import BoxSubtitle from '../../components/boxSubtitle';
 import Button from '../../components/button';
 import Card from '../../components/card';
@@ -13,6 +13,10 @@ import * as S from './style';
 
 export default function Product() {
     const { products, loading } = useApi();
+    const { id } = useParams();
+
+    const product = products.filter((item) => item.id === id);
+    const otherProduct = products.filter((item) => item.id !== id).slice(0, 4);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -24,54 +28,55 @@ export default function Product() {
 
     return (
         <Container>
-            <S.ContainerProduct>
-                <S.ProductFigure>
-                    <S.ProductImage src={Speakers} alt="speaker" />
-                </S.ProductFigure>
+            {product.map((item) => (
+                <S.ContainerProduct key={item.id}>
+                    <S.ProductFigure>
+                        <S.ProductImage
+                            src={`${item.avatar}?${item.id}`}
+                            alt={item.name}
+                        />
+                    </S.ProductFigure>
 
-                <S.ProductContent>
-                    <S.ProductName>Speaker</S.ProductName>
-                    <S.ProductPrice>R$ 45,00</S.ProductPrice>
-                    <S.ProductText>
-                        PlayStation 5 Controller Skin High quality vinyl with
-                        air channel adhesive for easy bubble free install & mess
-                        free removal Pressure sensitive.
-                    </S.ProductText>
+                    <S.ProductContent>
+                        <S.ProductName>{item.name}</S.ProductName>
+                        <S.ProductPrice>R$ 45,00</S.ProductPrice>
+                        <S.ProductText>{item.desciption}</S.ProductText>
 
-                    <S.ProductText>Em estoque</S.ProductText>
-                    <Button padding="12px">Adicionar ao carrinho</Button>
+                        <S.ProductText>Em estoque</S.ProductText>
+                        <Button padding="12px">Adicionar ao carrinho</Button>
 
-                    <S.BoxInfos>
-                        <S.InlineContent border>
-                            <span>
-                                <Package size={32} />
-                            </span>
+                        <S.BoxInfos>
+                            <S.InlineContent border>
+                                <span>
+                                    <Package size={32} />
+                                </span>
 
-                            <span>
-                                <S.ProductText>Frete Grátis</S.ProductText>
-                                <S.ProductText>
-                                    Digite seu código postal para
-                                    disponibilidade de entrega
-                                </S.ProductText>
-                            </span>
-                        </S.InlineContent>
-                        <S.InlineContent>
-                            <span>
-                                <ArrowUUpLeft size={32} />
-                            </span>
+                                <span>
+                                    <S.ProductText>Frete Grátis</S.ProductText>
+                                    <S.ProductText>
+                                        Digite seu código postal para
+                                        disponibilidade de entrega
+                                    </S.ProductText>
+                                </span>
+                            </S.InlineContent>
+                            <S.InlineContent>
+                                <span>
+                                    <ArrowUUpLeft size={32} />
+                                </span>
 
-                            <span>
-                                <S.ProductText>
-                                    30 dias para devoluções
-                                </S.ProductText>
-                                <S.ProductText>
-                                    Devoluções de entrega grátis em 30 dias.
-                                </S.ProductText>
-                            </span>
-                        </S.InlineContent>
-                    </S.BoxInfos>
-                </S.ProductContent>
-            </S.ContainerProduct>
+                                <span>
+                                    <S.ProductText>
+                                        30 dias para devoluções
+                                    </S.ProductText>
+                                    <S.ProductText>
+                                        Devoluções de entrega grátis em 30 dias.
+                                    </S.ProductText>
+                                </span>
+                            </S.InlineContent>
+                        </S.BoxInfos>
+                    </S.ProductContent>
+                </S.ContainerProduct>
+            ))}
 
             <section>
                 <BoxSubtitle.Container>
@@ -79,7 +84,7 @@ export default function Product() {
                 </BoxSubtitle.Container>
 
                 <S.ContainerOtherProducts>
-                    {products.slice(0, 4).map((item: ProductsProps) => (
+                    {otherProduct.map((item: ProductsProps) => (
                         <Card key={item.id} products={item} />
                     ))}
                 </S.ContainerOtherProducts>
