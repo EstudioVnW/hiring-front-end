@@ -1,53 +1,16 @@
 import { ArrowUUpLeft, Package } from '@phosphor-icons/react';
-import { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 
 import BoxSubtitle from '../../components/boxSubtitle';
 import Button from '../../components/button';
 import Card from '../../components/card';
 import Container from '../../components/container';
 import Loading from '../../components/loading';
-import { CartContext } from '../../contexts/cartContext';
 import useApi from '../../hooks/useApi';
 import { ProductsProps } from '../../interfaces/productsProps';
-import api from '../../services/api';
 import * as S from './style';
 
-interface ProductValues {
-    id: number;
-    name: string;
-    price: number;
-    description: string;
-    avatar: string;
-    quantity: number;
-}
-
 export default function Product() {
-    const { products, loading } = useApi();
-    const [product, setProduct] = useState<ProductValues | null>(null);
-    const { id } = useParams();
-    const { addToCart } = useContext(CartContext);
-
-    async function getProduct() {
-        try {
-            const { data } = await api.get(`/produtos/${id}`);
-
-            const productWithQuantity = { ...data, quantity: 1 };
-
-            setProduct(productWithQuantity);
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    const otherProducts = products
-        .filter((item) => item.id !== Number(id))
-        .slice(0, 4);
-
-    useEffect(() => {
-        getProduct();
-        window.scrollTo(0, 0);
-    }, [id]);
+    const { product, loading, addToCart, otherProducts } = useApi();
 
     if (loading) {
         return <Loading />;

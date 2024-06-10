@@ -7,3 +7,12 @@ export interface ProductsProps {
     price: number;
     quantity: number;
 }
+
+export interface ProductValues {
+    id: number;
+    name: string;
+    price: number;
+    description: string;
+    avatar: string;
+    quantity: number;
+}
