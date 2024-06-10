@@ -22,13 +22,19 @@ export default function ECommerce() {
       .then((item) => {
         setProducts(item.data);
         setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
   };
 
   useEffect(() => {
     fetchProducts();
+  }, []);
+
+  useEffect(() => {
     if (cart) setCart(getItem("itemInCart"));
-  }, [cart]);
+  }, []);
 
   const productsFiltred = products.filter((item) =>
     item.name.toLocaleLowerCase().includes(filterValue.toLocaleLowerCase())

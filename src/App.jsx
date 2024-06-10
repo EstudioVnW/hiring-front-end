@@ -13,6 +13,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route exact path="/" Component={ECommerce} />
+        <Route exact path="/hiring-front-end" Component={ECommerce} />
         <Route exact path="/cart" Component={Cart} />
       </Routes>
     </>
