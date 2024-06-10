@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useEffect, useState } from 'react';
+import {
+    ReactNode,
+    createContext,
+    useCallback,
+    useEffect,
+    useState,
+} from 'react';
 
 import { CartContextType, CartItem } from '../interfaces/cart';
 
@@ -8,6 +14,7 @@ export const CartContext = createContext<CartContextType>({
     removeFromCart: () => {},
     clearCart: () => {},
     getCartTotal: () => 0,
+    quantityProductInCart: 0,
 });
 
 interface CartProviderProps {
@@ -20,6 +27,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
             ? JSON.parse(localStorage.getItem('cartItems')!)
             : [],
     );
+    const [quantityProductInCart, setQuantityProductInCart] = useState(0);
 
     const addToCart = (item: CartItem) => {
         const isItemInCart = cartItems.find(
@@ -38,6 +46,14 @@ export const CartProvider = ({ children }: CartProviderProps) => {
             setCartItems([...cartItems, { ...item, quantity: 1 }]);
         }
     };
+
+    const handleQuantityProducts = useCallback(() => {
+        const totalQuantity = cartItems.reduce(
+            (total, item) => total + item.quantity,
+            0,
+        );
+        setQuantityProductInCart(totalQuantity);
+    }, [cartItems]);
 
     const removeFromCart = (item: CartItem) => {
         const isItemInCart = cartItems.find(
@@ -72,7 +88,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
     useEffect(() => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }, [cartItems]);
+        handleQuantityProducts();
+    }, [cartItems, handleQuantityProducts]);
 
     useEffect(() => {
         const cartItems = localStorage.getItem('cartItems');
@@ -89,6 +106,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
                 removeFromCart,
                 clearCart,
                 getCartTotal,
+                quantityProductInCart,
             }}
         >
             {children}

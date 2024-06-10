@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
+import devices from '../../styles/devices';
 import theme from '../../styles/theme';
 
 export const ContainerContent = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    @media (${devices.tabletS}) {
+        flex-direction: column;
+    }
 `;
 
 export const BoxContent = styled.div`

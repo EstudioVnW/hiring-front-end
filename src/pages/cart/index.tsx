@@ -12,7 +12,7 @@ export default function CartPage() {
     if (cartItems.length === 0) {
         return (
             <Container>
-                <h1>Seu carrinho está vazio</h1>
+                <S.CartTitle>Seu carrinho está vazio</S.CartTitle>
             </Container>
         );
     }
@@ -20,23 +20,11 @@ export default function CartPage() {
     return (
         <Container>
             <section>
-                <S.ContainerContent>
-                    <S.BoxContent>
-                        <S.TextCart>Produto</S.TextCart>
-                    </S.BoxContent>
-                    <S.BoxContent>
-                        <S.TextCart>Preço</S.TextCart>
-                    </S.BoxContent>
-                    <S.BoxContent>
-                        <S.TextCart>Quantidade</S.TextCart>
-                    </S.BoxContent>
-                </S.ContainerContent>
-
                 {cartItems.map((item) => (
                     <S.ContainerContent key={item.id}>
                         <S.BoxContent>
                             <S.ProductImageCart
-                                src={item.avatar}
+                                src={`${item.avatar}?${item.id}`}
                                 alt={item.name}
                             />
                             <S.TextCart>{item.name}</S.TextCart>
