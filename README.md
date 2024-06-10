@@ -37,3 +37,5 @@ yarn dev
 yarn build
 ```
 Após a execução desse comando, você pode servir os arquivos estáticos contidos na pasta `dist` utilizando qualquer servidor de sua escolha. 🚀
+<br />
+[Deploy na Vercel](https://hiring-front-end-three.vercel.app/)
