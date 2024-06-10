@@ -22,15 +22,6 @@ Construir uma aplicação web em ReactJS que tenha o comportamento de um e-comme
    ```
    npm install
    ```
-   ```
-   npm i styled-components
-   ```
-   ```
-   npm i react-router-dom
-   ```
-   ```
-   npm i axios
-   ```
 4. Inicie o servidor de desenvolvimento:
    ```
    npm run dev
