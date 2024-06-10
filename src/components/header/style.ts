@@ -144,6 +144,7 @@ export const InputSearch = styled.input`
 `;
 
 export const BtnTransparent = styled.button<{ search?: boolean }>`
+    position: relative;
     background: transparent;
     border: none;
     outline: none;
@@ -156,4 +157,19 @@ export const BtnTransparent = styled.button<{ search?: boolean }>`
             right: 8px;
             height: 40px;
         `}
+`;
+
+export const Badge = styled.span`
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background: ${theme.accent};
+    font-size: 12px;
+    color: ${theme.light};
 `;

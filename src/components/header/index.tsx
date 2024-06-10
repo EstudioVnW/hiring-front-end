@@ -1,5 +1,5 @@
 import { List, MagnifyingGlass, ShoppingCart, X } from '@phosphor-icons/react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
     Link,
     useLocation,
@@ -7,6 +7,7 @@ import {
     useSearchParams,
 } from 'react-router-dom';
 
+import { CartContext } from '../../contexts/cartContext';
 import { navLinks } from '../../mocks/navLinks';
 import * as S from './style';
 
@@ -16,6 +17,8 @@ export default function Header() {
     const [searchTerm, setSearchTerm] = useState<string>(
         searchParams.get('search') || '',
     );
+
+    const { quantityProductInCart } = useContext(CartContext);
 
     const navigate = useNavigate();
     const { pathname } = useLocation();
@@ -76,6 +79,9 @@ export default function Header() {
                             <Link to="/cart">
                                 <ShoppingCart size={24} />
                             </Link>
+                            {quantityProductInCart > 0 && (
+                                <S.Badge>{quantityProductInCart}</S.Badge>
+                            )}
                         </S.BtnTransparent>
                     </S.HeaderBoxSearch>
                 </S.BoxLinks>
