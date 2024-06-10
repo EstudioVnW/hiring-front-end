@@ -37,21 +37,19 @@ export default function ProductsArea({ordem, pesquisa, setPaginaInformacao, carr
         pegarDados()
     }, [])
 
-    // Função para organizar os itens de formas diferentes 
-    useEffect(() => {
-        if (ordem === "pri-down") {
-            produtosFiltrados.sort((a, b) => b.price - a.price)
-        } 
-        else if (ordem === "pri-up") {
-            produtosFiltrados.sort((a, b) => a.price - b.price)
-        } 
-        else if (ordem === "alf-up") {        
-            produtosFiltrados.sort((a, b) => b.name.localeCompare(a.name))
-        }
-        else if (ordem === "alf-down") {
-            produtosFiltrados.sort((a, b) => a.name.localeCompare(b.name))
-        }
-    }, [ordem])
+    // Sequência para organizar os itens de formas diferentes 
+    if (ordem === "pri-down") {
+        produtosFiltrados.sort((a, b) => b.price - a.price)
+    } 
+    else if (ordem === "pri-up") {
+        produtosFiltrados.sort((a, b) => a.price - b.price)
+    } 
+    else if (ordem === "alf-up") {        
+        produtosFiltrados.sort((a, b) => b.name.localeCompare(a.name))
+    }
+    else if (ordem === "alf-down") {
+        produtosFiltrados.sort((a, b) => a.name.localeCompare(b.name))
+    }
     
 
     // Função que recebe a pesquisa feita na header e filtra a lista de itens a partir dela
