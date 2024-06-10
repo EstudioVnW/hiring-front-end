@@ -9,6 +9,7 @@ import About from '../pages/about';
 import AllProducts from '../pages/allProducts';
 import CartPage from '../pages/cart';
 import Home from '../pages/home';
+import NotFoundPage from '../pages/notFound';
 import Product from '../pages/product';
 
 const Router = createBrowserRouter(
@@ -19,6 +20,7 @@ const Router = createBrowserRouter(
             <Route path="/products/:id" element={<Product />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFoundPage />} />
         </Route>,
     ),
 );
