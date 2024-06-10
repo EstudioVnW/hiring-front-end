@@ -1,51 +1,41 @@
+![Tradly](https://github.com/mateusisrael/hiring-front-end/blob/chore/docs/src/docs/logo-hdpi.png) 
+<br />
+# Tradly e-commerce
+<br />
+Este projeto é uma aplicação React criada utilizando o template do Vite com TypeScript.
+<br />
+<br />
 
-## Objetivo
-Construir uma aplicação web em ReactJS que tenha o comportamento de um e-commerce.
+![Shopping print](https://github.com/mateusisrael/hiring-front-end/blob/chore/docs/src/docs/1.png)
 
-## Como começar
-Dar um fork no projeto, clonar o repositório em sua máquina local e criar um branch novo para o seu código.
+## Pré-requisitos
 
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-## Regras de negócio
-•	Ao acessar a home, trazer a listagem de produtos vinda da API de referência.  
+- **Node.js** (versão 20.11.1)
+- **Gerenciador de Pacotes**: yarn
 
-•	Ao digitar no campo de busca, deve-se trazer somente os resultados digitados.  
+## Instalação
 
-•	Ao clicar no botão "Adicionar ao carrinho", deve-se inserir o produto ao carrinho de compras.  
+### 1. Clonar o Repositório
+Clone este repositório para sua máquina local usando o seguinte comando:
+```bash
+git clone https://github.com/mateusisrael/hiring-front-end.git
+```
 
-•	No carrinho de compras, pode-se remover os produtos.  
+### 2. Instalar dependências
+```bash
+yarn install
+```
+### 3. Rodar ambiente de desenvolvimento
+```bash
+yarn dev
+```
 
-•	No carrinho de compras, deve-se informar o total da compra.
-
-
-## Referências
-•	API de produtos: https://62d742f351e6e8f06f1a83da.mockapi.io/api/produtos
-
-
-## Observações
-1. Não é necessário se preocupar com CORS ou implementar um backend para fazer as requisições. A API de produtos permite chamadas diretas do navegador.
-
-2. Design de livre escolha.
-
-
-## Requisitos Técnicos para a entrega do teste
-
-•	Pode utilizar qualquer library de CSS e CSS-in-JS. (recomendamos Material UI, Bootstrap ou Styled Components. Pode fazer com CSS clássico também)
-
-•	O projeto deve ter uma documentação em readme ensinando a: 
-1. instalar o projeto na máquina (engines, versão de node, qual gerenciador de pacote usar)
-2. instalar as dependências do projeto
-3. rodar o ambiente de desenvolvimento
-4. rodar a build de deploy da aplicação.
-
-•	Pode utilizar tanto o Axios quanto ou Fetch para requisições.
-
-•	Hospedar o projeto em um servidor (Heroku, Vercel, Netlify)
-
-## Diferenciais técnicos
-
-•	Utilização de typescript
-
-•	Bom uso de context api ou outro gerenciamento de estados
-
-Boa sorte!
+### 4. Rodar build da aplicação
+```bash
+yarn build
+```
+Após a execução desse comando, você pode servir os arquivos estáticos contidos na pasta `dist` utilizando qualquer servidor de sua escolha. 🚀
+<br />
+[Deploy na Vercel](https://hiring-front-end-three.vercel.app/)
