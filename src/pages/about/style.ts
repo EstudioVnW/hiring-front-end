@@ -51,3 +51,8 @@ export const List = styled.li`
         font-size: 14px;
     }
 `;
+
+export const SocialBox = styled.div`
+    display: flex;
+    gap: 12px;
+`;

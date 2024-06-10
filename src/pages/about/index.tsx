@@ -1,3 +1,5 @@
+import { GithubLogo, LinkedinLogo } from '@phosphor-icons/react';
+
 import Container from '../../components/container';
 import * as S from './style';
 
@@ -48,6 +50,23 @@ export default function About() {
                         mercado digital.
                     </S.List>
                 </ul>
+
+                <S.SocialBox>
+                    <a
+                        href="https://github.com/brunowzz"
+                        target="_blank"
+                        aria-label="Link para o GitHub"
+                    >
+                        <GithubLogo size={32} color="#000" />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/brunobarreiras/"
+                        target="_blank"
+                        aria-label="Link para o Linkedin"
+                    >
+                        <LinkedinLogo size={32} color="#000" />
+                    </a>
+                </S.SocialBox>
             </S.ContainerContent>
         </Container>
     );
