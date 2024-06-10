@@ -22,6 +22,9 @@ Construir uma aplicação web em ReactJS que tenha o comportamento de um e-comme
    ```
    npm install
    ```
+
+## Acesse o deploy do site <a href="hiring-front-end-eight.vercel.app" target="blank-">AQUI</a>
+
 4. Inicie o servidor de desenvolvimento:
    ```
    npm run dev
