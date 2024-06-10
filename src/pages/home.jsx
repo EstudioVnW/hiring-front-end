@@ -55,7 +55,7 @@ export default function ECommerce() {
 
   const verifyItemSeach = productsFiltred.length !== 0;
   const verifyItemSelecById = (product) =>
-    cart.some((itemCart) => itemCart.id === product.id);
+    cart && cart.some((itemCart) => itemCart.id === product.id);
 
   return (
     <section>
@@ -89,6 +89,7 @@ export default function ECommerce() {
           {!isLoading ? (
             <S.CardContainer>
               {verifyItemSeach ? (
+                productsFiltred &&
                 productsFiltred.map((product) => {
                   return (
                     <S.Card key={product.id}>
