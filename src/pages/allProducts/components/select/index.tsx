@@ -14,11 +14,14 @@ export default function Select({
     return (
         <S.SelectBox>
             <S.Select
-                defaultValue={'default'}
                 onChange={handleSortChange}
-                value={`${sortBy}-${sortOrder}`}
+                value={
+                    sortBy && sortOrder ? `${sortBy}-${sortOrder}` : 'default'
+                }
             >
-                <S.Option value="default">Filtrar por:</S.Option>
+                <S.Option value="default" disabled>
+                    Filtrar por:
+                </S.Option>
                 <S.Option value="date-desc">Mais recentes</S.Option>
                 <S.Option value="date-asc">Mais antigos</S.Option>
                 <S.Option value="name-asc">Ordem alfabética: A-Z</S.Option>
