@@ -73,7 +73,9 @@ export default function Header() {
                         </S.SearchBar>
 
                         <S.BtnTransparent>
-                            <ShoppingCart size={24} />
+                            <Link to="/cart">
+                                <ShoppingCart size={24} />
+                            </Link>
                         </S.BtnTransparent>
                     </S.HeaderBoxSearch>
                 </S.BoxLinks>
