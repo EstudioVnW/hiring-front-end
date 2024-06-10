@@ -9,3 +9,10 @@ export const totalItemsValues = (items: ProductDTO[]) => {
 
   return totalValue;
 }
+
+export const searchProducts = (items: ProductDTO[], term: string): ProductDTO[] => {
+  term = term.toLowerCase();
+
+  const result = items.filter(item => item.name.toLowerCase().includes(term));
+  return result;
+}
