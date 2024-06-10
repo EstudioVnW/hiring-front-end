@@ -5,7 +5,7 @@ import * as S from "./style.jsx"
 
 import { Link } from "react-router-dom"
 
-export default function Header({setPesquisa}) {
+export default function Header({setPesquisa}) { // Recebendo a função para definir a pesquisa
 
 
     return (
@@ -18,13 +18,13 @@ export default function Header({setPesquisa}) {
             <S.SearchBar>
                 <input type="text" onChange={e => setPesquisa(e.target.value)}/>
                 <button id="botao-pesquisa">
-                    <img src={Seach} alt=""/>
+                    <img src={Seach} alt="Pesquisar" title="Pesquisar"/>
                 </button>
             </S.SearchBar>
             <S.Cart>
                 <figure>
                     <Link to="/carrinho">
-                        <img src={Cart} alt="" />
+                        <img src={Cart} alt="Carrinho" title="Carrinho"/>
                     </Link>
                 </figure>
             </S.Cart>

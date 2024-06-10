@@ -9,11 +9,21 @@ import { useEffect, useState } from "react"
 
 
 export default function ProductsArea({ordem, pesquisa, setPaginaInformacao, carrinho, setCarrinho}) {
+    /* Recebendo, respectivamente: 
+        - A ordem de organização dos items
+        - O estado com o valor da pesquisa feita na headder
+        - Função para informar outros components os dados do Item específico acessado
+        - Estado com a lista dos items do carrinho
+        - Função para modificar a lista dos items do carrinho
+    */
+
+
+    // Declaração de Estados para o armazenamento dos dados da API
     const [produtos, setProdutos] = useState([])
     const [produtosFiltrados, setProdutosFiltrados] = useState([])
-    
     const pegarDados = async () => {
         
+        // Consumo dos dados utilizando de axios
         try {
             const Dados = await axios.get("https://62d742f351e6e8f06f1a83da.mockapi.io/api/produtos");
             setProdutos(Dados.data)
@@ -27,20 +37,24 @@ export default function ProductsArea({ordem, pesquisa, setPaginaInformacao, carr
         pegarDados()
     }, [])
 
-    if (ordem === "pri-down") {
-        produtosFiltrados.sort((a, b) => b.price - a.price)
-    } 
-    else if (ordem === "pri-up") {
-        produtosFiltrados.sort((a, b) => a.price - b.price)
-    } 
-    else if (ordem === "alf-up") {        
-        produtosFiltrados.sort((a, b) => b.name.localeCompare(a.name))
-    }
-    else if (ordem === "alf-down") {
-        produtosFiltrados.sort((a, b) => a.name.localeCompare(b.name))
-    }
+    // Função para organizar os itens de formas diferentes 
+    useEffect(() => {
+        if (ordem === "pri-down") {
+            produtosFiltrados.sort((a, b) => b.price - a.price)
+        } 
+        else if (ordem === "pri-up") {
+            produtosFiltrados.sort((a, b) => a.price - b.price)
+        } 
+        else if (ordem === "alf-up") {        
+            produtosFiltrados.sort((a, b) => b.name.localeCompare(a.name))
+        }
+        else if (ordem === "alf-down") {
+            produtosFiltrados.sort((a, b) => a.name.localeCompare(b.name))
+        }
+    }, [ordem])
+    
 
-
+    // Função que recebe a pesquisa feita na header e filtra a lista de itens a partir dela
     const filtrar = () => {
         const listaFiltrada = produtos.filter(f => f.name.toLowerCase().includes(pesquisa.toLowerCase()))
 
@@ -57,6 +71,8 @@ export default function ProductsArea({ordem, pesquisa, setPaginaInformacao, carr
         }
     }
 
+    // Função para fazer a pesquisa funcionar, e apenas uma vês por clique, com
+    // a tecla Enter
     const [errorDisplay, setErrorDisplay] = useState("none")
     const [clicked, setClicked] = useState(false);
     useEffect(() => {
@@ -80,6 +96,12 @@ export default function ProductsArea({ordem, pesquisa, setPaginaInformacao, carr
         };
     }, [clicked, pesquisa]);
 
+
+    /* Função para adcionar items ao carrinho com as seguintes funções:
+        - Na primeira vês irá adcionar o item  ao carrinho adjunto de um novo valor que representa a quantidade   
+        - Se um item ja foi adcionado, ele irá apenas aumentar a quantidade deste item
+        - Caso adcione outros items, e volte para adcionar este, ele irá adcionar no item correto
+    */
     let jaAdcionado = false;
     let posicao;
     const addToCart = (item) => {
@@ -92,10 +114,7 @@ export default function ProductsArea({ordem, pesquisa, setPaginaInformacao, carr
             }
         })
         
-        if (carrinho.includes(items)) {
-            setCarrinho(carrinho, carrinho[0][5] = +carrinho[0][5] + 1)
-        } 
-        else if (jaAdcionado) {
+        if (jaAdcionado) {
             setCarrinho(carrinho, carrinho[posicao][5] = +carrinho[posicao][5] + 1)
         }
         else {
@@ -110,7 +129,7 @@ export default function ProductsArea({ordem, pesquisa, setPaginaInformacao, carr
                 <S.Product key={item.id} onClick={() => setPaginaInformacao([item.name, item.desciption, item.price, item.avatar, item.id])}>
                     <figure>
                         <Link to="/produto">
-                            <img src={item.avatar} alt="" />
+                            <img src={item.avatar} alt={item.name} />
                         </Link>
                     </figure>
                     <S.ProductText>
@@ -126,7 +145,7 @@ export default function ProductsArea({ordem, pesquisa, setPaginaInformacao, carr
                             </p>
                         </Link>
                         <button onClick={() => addToCart(item)}>
-                            <img src={Cart} alt="" />
+                            <img src={Cart} alt="Adcionar ao Carrinho" title="Adcionar ao Carrinho" />
                         </button>
                     </S.ProductText>
                 </S.Product>

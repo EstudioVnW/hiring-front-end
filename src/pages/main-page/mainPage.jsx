@@ -3,8 +3,19 @@ import ProductsArea from "../../components/products-area/products-area"
 import { useState } from "react"
 
 export default function MainPage({pesquisa, setPaginaInformacao, carrinho, setCarrinho}) {
+    /*
+        Recebendo, respectivamente:
+        - Valor da pesquisa
+        - Função para definir o valor específico de certo item
+        - Estado com a lista dos items do carrinho
+        - Função para modificar a lista dos items do carrinho
 
-    const [ordem, setOrdem] = useState()
+        Todos estes item irão para o componente ProductsArea
+     */
+
+    
+    // Estado para definir a ordem dos items apresentados
+    const [ordem, setOrdem] = useState('')
 
     return (
         <S.Main>
@@ -33,6 +44,7 @@ export default function MainPage({pesquisa, setPaginaInformacao, carrinho, setCa
                         </figure>
                     </header>
                 </article>
+                {/* Chamando o componente e passando seus valores através de Props */}
                 <ProductsArea 
                     ordem={ordem} 
                     pesquisa={pesquisa}

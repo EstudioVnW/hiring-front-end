@@ -1,14 +1,15 @@
 import { useState } from "react";
 import * as S from "./style.jsx"
-import { Link } from "react-router-dom";
 
-export default function Carrinho({carrinho}) {
+export default function Carrinho({carrinho}) { // Recebendo a lista de items do carrinho
 
+    // Calculo para o preço total dos items
     let total = 0;
     carrinho.forEach((e) => {
         total += (+e[2] * +e[5]);
     })
 
+    // Criação do map de items do carrinho
     const [map, setMap] = useState(
     carrinho.map((item) => (
         <S.CarrinhoItem key={item[4]}>
@@ -32,11 +33,11 @@ export default function Carrinho({carrinho}) {
         </S.CarrinhoItem>
     )))
 
+    // Função para excluir item do carrinho
     const excluir = (item) => {
-        console.log("cu")
         carrinho.shift(item)
-        console.log(carrinho)
 
+        // Set timout para atualizar a lista de items do carrinho após a exclusão
         setTimeout(() => {
             setMap(carrinho.map((item) => (
                 <S.CarrinhoItem key={item[4]}>
@@ -61,6 +62,7 @@ export default function Carrinho({carrinho}) {
         }, 100) 
     }
 
+    // Função para finalizar a compra
     const finalizarCompra = () => {
         alert("Compra finalizada")
         location.reload()

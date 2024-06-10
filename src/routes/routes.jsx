@@ -5,13 +5,16 @@ import ProductPage from '../pages/product-page/productPage.jsx'
 import { useState } from 'react'
 
 export default function Rotas({pesquisa}) {
+    // Recebendo o valor da pesquisa feita na header
 
+    // Criação de estados para o armazenamento de dados de items específicos
+    // E o armazenamento dos items presentes do carrinho
     const [paginaInformacao, setPaginaInformacao] = useState('')
     const [carrinho, setCarrinho] = useState([])
 
     return (
         <>
-            <Routes>
+            <Routes> 
                 <Route path='/' element={<MainPage 
                                             pesquisa={pesquisa}
                                             setPaginaInformacao={setPaginaInformacao}

@@ -3,12 +3,18 @@ import * as S from "./style.jsx"
 import { Link } from "react-router-dom"
 
 export default function ProductPage({paginaInformacao, setCarrinho, carrinho}) {
+    /* Recebendo, respectivamente:
+        - Os dados do Item a ser apresentado na página
+        - Função para modificar a lista dos items do carrinho
+        - Estado com a lista dos items do carrinho
+    */
 
+    // Estado para armazenar e modificar quantos items irão ser adcionados ao carrinho
     const [quantidade, setQuantidade] = useState(1)
 
+    // Variaveis para facilitar a função para adcionar ao carrinho
     let jaAdcionado = false;
     let posicao;
-    
     carrinho.forEach((e, i) => {
         if (e[4] == paginaInformacao[4]) {
             jaAdcionado = true;
@@ -16,6 +22,11 @@ export default function ProductPage({paginaInformacao, setCarrinho, carrinho}) {
         }
     })
 
+    /* Função para adcionar items ao carrinho com as seguintes funções:
+        - Na primeira vês irá adcionar o item ao carrinho adjunto de um novo valor que representa a quantidade   
+        - Se um item ja foi adcionado, ele irá apenas aumentar a quantidade deste item
+        - Caso adcione outros items, e volte para adcionar este, ele irá adcionar no item correto
+    */
     const addToCart = () => {
 
         if (carrinho.includes(paginaInformacao)) {
@@ -28,7 +39,6 @@ export default function ProductPage({paginaInformacao, setCarrinho, carrinho}) {
             paginaInformacao.push(quantidade)
             setCarrinho(carrinho, carrinho.unshift(paginaInformacao))
         }
-        console.log(carrinho)
     }
 
     return(
@@ -37,6 +47,8 @@ export default function ProductPage({paginaInformacao, setCarrinho, carrinho}) {
                 <figure>
                     <img src={paginaInformacao[3]} alt="" />
                 </figure>
+                {/* Ternário para exibir mensagem de erro no caso de problemas em pegar as informações
+                do produto */}
                 {paginaInformacao[0] ?
                 <S.ProductPageDescription>
                     <h1>
@@ -62,8 +74,8 @@ export default function ProductPage({paginaInformacao, setCarrinho, carrinho}) {
                                 Add to Cart
                             </S.addToCart>
                         </S.buyArea>
-                </S.ProductPageDescription>
-                : <Link to="/"><S.MsgError>Volte para a página inícial</S.MsgError></Link>}
+                </S.ProductPageDescription> 
+                : <Link to="/"><S.MsgError>Volte para a página inícial</S.MsgError></Link>}  {/* Mensagem de erro*/} 
             </S.ProductPageContainer>
         </S.ProductPage>
     )
