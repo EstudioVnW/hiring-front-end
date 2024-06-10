@@ -27,7 +27,6 @@ export default function Header() {
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         if (pathname !== '/all') {
-            setSearchTerm('');
             setSearchParams({});
         }
         navigate(`/all?search=${searchTerm}`);
