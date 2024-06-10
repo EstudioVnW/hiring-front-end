@@ -54,7 +54,16 @@ export const ECommerce = () => {
   const verifyItemSeach = productsFiltred.length !== 0;
 
   return (
-    <section className="container">
+    <section>
+      <S.HeaderCommerce>
+        <S.HeaderCommerceH2>E-COMMERCE</S.HeaderCommerceH2>
+        <S.HeaderCommerceP>
+          At YourWeb, you can find a little bit of everything! Our mission is to
+          bring variety and convenience to your online shopping experience,
+          offering a vast selection of high-quality products for all your daily
+          needs.
+        </S.HeaderCommerceP>
+      </S.HeaderCommerce>
       <S.Child>
         <S.ChildTitleProducts>PRODUCTS</S.ChildTitleProducts>
 

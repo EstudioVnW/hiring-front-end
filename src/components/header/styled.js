@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components";
-import img from "../../image/store.png";
 
 import { Link } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
@@ -10,6 +9,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-bottom: solid #BEBEBE 2px;
 `;
 
 const HeaderNav = styled.nav`
@@ -105,34 +105,6 @@ const BagCart = styled(Link)`
   }
 `;
 
-const HeaderCommerce = styled.div`
-  width: 100%;
-  height: 65vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: whitesmoke;
-  background: linear-gradient(rgba(0, 0, 0, 0.511), rgba(0, 0, 0, 0.27)),
-    url(${img});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-`;
-
-const HeaderCommerceH2 = styled.h2`
-  font-size: 5vw;
-  font-weight: 100;
-  padding-bottom: 8vh;
-`;
-
-const HeaderCommerceP = styled.p`
-  width: 50%;
-  font-size: 1.3vw;
-  text-align: center;
-  font-weight: lighter;
-`;
-
 export {
   Header,
   HeaderNav,
@@ -144,7 +116,4 @@ export {
   Icons,
   IconUser,
   BagCart,
-  HeaderCommerce,
-  HeaderCommerceH2,
-  HeaderCommerceP,
 };

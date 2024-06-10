@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import img from "../image/store.png";
+
 import { Rating, RoundedStar } from "@smastrom/react-rating";
 
 export const myStyles = {
@@ -6,6 +8,34 @@ export const myStyles = {
   activeFillColor: "#FFB700",
   inactiveFillColor: "#FBF1A9",
 };
+
+const HeaderCommerce = styled.div`
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: whitesmoke;
+  background: linear-gradient(rgba(0, 0, 0, 0.511), rgba(0, 0, 0, 0.27)),
+    url(${img});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+
+const HeaderCommerceH2 = styled.h2`
+  font-size: 5vw;
+  font-weight: 100;
+  padding-bottom: 8vh;
+`;
+
+const HeaderCommerceP = styled.p`
+  width: 50%;
+  font-size: 1.3vw;
+  text-align: center;
+  font-weight: lighter;
+`;
 
 const Child = styled.div`
   width: 100%;
@@ -158,8 +188,125 @@ const CardButton = styled.button`
     transform: scale(1.1);
   }
 `;
+const Cart = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+  position: relative;
+`;
+
+const CardCartContainer = styled.div`
+  width: 80%;
+  margin: 10px 0px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  &:hover {
+    transition: 0.3s;
+    transform: translateY(-1vh);
+  }
+`;
+
+const CardProductCart = styled.div`
+  margin: 0% 0 4% 0;
+`;
+
+const CardProductCartTitle = styled.h2`
+  padding-bottom: 2vh;
+  font-size: 2vw;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+`;
+const CardProductCartDescription = styled.p`
+  width: 80%;
+  font-size: 1vw;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+`;
+
+const CardCart = styled.div`
+  display: flex;
+  width: 92%;
+
+  border-radius: 8px;
+  margin: 3% 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  &:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+  }
+`;
+const CardCartImage = styled.img`
+  width: 45%;
+
+  height: auto;
+`;
+const CartContainer = styled.div`
+  width: 70%;
+`;
+const CardCartPaymentBox = styled.div`
+  width: 40%;
+  height: auto;
+`;
+const CardCartPayment = styled.div`
+  width: 100%;
+  height: auto;
+  position: sticky;
+  top: 5%;
+`;
+const CardCartPaymentPicture = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-item: center;
+  position: sticky;
+  top: 5%;
+
+  div {
+    width: 80%;
+    img {
+      width: 100%;
+    }
+  }
+`;
+
+const CartPaymentButton = styled.button`
+  width: 100%;
+  padding: 3% 0;
+
+  border: none;
+  border-radius: 0.5vw;
+
+  background-color: black;
+  color: white;
+
+  font-size: 1vw;
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+`;
 
 export {
+  HeaderCommerce,
+  HeaderCommerceH2,
+  HeaderCommerceP,
   Child,
   ChildTitleProducts,
   FilterContainer,
@@ -169,6 +316,7 @@ export {
   CardContainer,
   Products,
   Card,
+  CartContainer,
   CardContentDescription,
   CardContainerTitle,
   CardTitle,
@@ -179,4 +327,15 @@ export {
   CardPrice,
   CardPriceSpan,
   CardButton,
+  Cart,
+  CardProductCart,
+  CardProductCartTitle,
+  CardProductCartDescription,
+  CardCartPaymentPicture,
+  CardCart,
+  CardCartContainer,
+  CardCartImage,
+  CardCartPayment,
+  CardCartPaymentBox,
+  CartPaymentButton,
 };
