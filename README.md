@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+![Tradly](https://github.com/mateusisrael/hiring-front-end/blob/chore/docs/src/docs/logo-hdpi.png) 
+<br />
+# Tradly e-commerce
+<br />
+Este projeto é uma aplicação React criada utilizando o template do Vite com TypeScript.
+<br />
+<br />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Shopping print](https://github.com/mateusisrael/hiring-front-end/blob/chore/docs/src/docs/1.png)
 
-Currently, two official plugins are available:
+## Pré-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-## Expanding the ESLint configuration
+- **Node.js** (versão 20.11.1)
+- **Gerenciador de Pacotes**: yarn
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instalação
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### 1. Clonar o Repositório
+Clone este repositório para sua máquina local usando o seguinte comando:
+```bash
+git clone https://github.com/mateusisrael/hiring-front-end.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 2. Instalar dependências
+```bash
+yarn install
+```
+### 3. Rodar ambiente de desenvolvimento
+```bash
+yarn dev
+```
+
+### 4. Rodar build da aplicação
+```bash
+yarn build
+```
+Após a execução desse comando, você pode servir os arquivos estáticos contidos na pasta `dist` utilizando qualquer servidor de sua escolha. 🚀
