@@ -1,8 +1,8 @@
-# Tradly e-commerce  https://github.com/mateusisrael/hiring-front-end/blob/chore/docs/src/docs/logo-hdpi.png
+# Tradly e-commerce  ![Tradly](https://github.com/mateusisrael/hiring-front-end/blob/chore/docs/src/docs/logo-hdpi.png)
 
 Este projeto é uma aplicação React criada utilizando o template do Vite com TypeScript.
 
-https://github.com/mateusisrael/hiring-front-end/blob/chore/docs/src/docs/1.png
+![Shopping print](https://github.com/mateusisrael/hiring-front-end/blob/chore/docs/src/docs/1.png)
 
 ## Pré-requisitos
 
