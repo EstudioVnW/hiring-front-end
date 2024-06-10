@@ -1,9 +1,9 @@
-<h1 align="center" id="top"> Exclusive </h1>
+<h1 align="center" id="top"> Exclusive  </h1>
 
-  <img src="https://github.com/brunowzz/hiring-front-end/blob/bruno-vinicius-barreiras-de-oliveira/.github/gifs/app.gif" width='100%' alt="Imagem 1"/>
+<img src="https://github.com/brunowzz/hiring-front-end/blob/bruno-vinicius-barreiras-de-oliveira/.github/gifs/app.gif" width='100%' alt="Imagem 1"/>
+ 
 
-
-> 🔎 Sistema de e-commerce
+> 🔎 Sistema de e-commerce, <a href="https://exclusive-ecommerce-hiring.netlify.app"> Link do projeto </a>
 
 ## :page_facing_up: Desafio Técnico: E-commerce
 
@@ -113,7 +113,13 @@ Este é um breve guia sobre a estrutura de pastas do projeto. Aqui está uma vis
 - [React Router](https://reactrouter.com/en/main)
 - [Swiper](https://swiperjs.com)
 
-## :white_check_mark: Requerimento
+## 🔗 Links
+| Ambiente     |  URL                             |
+| ---          |  ---                             |
+| Local        |  http://localhost:5173/         |                 |
+| Producão     |  https://exclusive-ecommerce-hiring.netlify.app
+
+## :white_check_mark: Requerimentos
 
 Antes de iniciar :checkered_flag:, você precisa ter o [Git](https://git-scm.com) e o [Node](https://nodejs.org/en/) instalados.
 
@@ -125,8 +131,11 @@ $ git clone https://github.com/brunowzz/hiring-front-end/
 
 # Acessar
 $ cd hiring-front-end
+$ git checkout bruno-vinicius-barreiras-de-oliveira
+
 # Instalar dependências
 $ npm i
+
 # Execute o projeto
 $ npm run dev
 # O servidor será inicializado em <http://localhost:5173>
