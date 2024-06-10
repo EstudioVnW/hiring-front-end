@@ -20,7 +20,7 @@ export default function Product() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [id]);
 
     if (loading) {
         return <Loading />;
