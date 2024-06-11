@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Card(product: Product) {
   const imageUrl = `${product.avatar}?${product.id} `
   return (
-    <div className="w-48 rounded-md overflow-hidden shadow-md hover:shadow-xl hover:text-blue-700">
+    <div className="w-48  max-h-[265px] rounded-md overflow-hidden shadow-md hover:shadow-xl hover:text-blue-700">
       <Link
         rel="stylesheet"
         className="flex flex-col"
