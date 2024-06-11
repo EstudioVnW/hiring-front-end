@@ -1,51 +1,70 @@
+# Hiring Front-End #
 
-## Objetivo
-Construir uma aplicação web em ReactJS que tenha o comportamento de um e-commerce.
+## Descrição
 
-## Como começar
-Dar um fork no projeto, clonar o repositório em sua máquina local e criar um branch novo para o seu código.
+Este repositório contém um projeto de e-commerce chamado YourWeb, desenvolvido como parte de um desafio para a contratação de desenvolvedores front-end. O projeto tem como objetivo avaliar as habilidades dos candidatos em criar interfaces de usuário utilizando React e outras bibliotecas modernas.
 
+O projeto inclui funcionalidades essenciais de um e-commerce, como navegação entre páginas de produtos, visualização de detalhes dos produtos, e integração com uma API para gerenciamento de dados. Além disso, foram utilizados componentes estilizados para garantir uma interface atraente e responsiva.
 
-## Regras de negócio
-•	Ao acessar a home, trazer a listagem de produtos vinda da API de referência.  
-
-•	Ao digitar no campo de busca, deve-se trazer somente os resultados digitados.  
-
-•	Ao clicar no botão "Adicionar ao carrinho", deve-se inserir o produto ao carrinho de compras.  
-
-•	No carrinho de compras, pode-se remover os produtos.  
-
-•	No carrinho de compras, deve-se informar o total da compra.
+Feito com o objetivo de identificar desenvolvedores talentosos e qualificados para integrar nossa equipe.
 
 
-## Referências
-•	API de produtos: https://62d742f351e6e8f06f1a83da.mockapi.io/api/produtos
+## Pré-requisitos
+
+- Node.js (versão 18.x.x)
+- npm (gerenciador de pacotes do Node.js)
+
+----
+## 1. Instalação do Projeto 
 
 
-## Observações
-1. Não é necessário se preocupar com CORS ou implementar um backend para fazer as requisições. A API de produtos permite chamadas diretas do navegador.
+Clonar o repositório
 
-2. Design de livre escolha.
+```bash
+git clone https://github.com/seu-usuario/hiring-front-end.git
+cd hiring-front-end
+```
 
+---
+### 2. Instalando as dependencias
+Instalando todas as dependencias que o projeto possui:
+```bash
+npm install
+```
+---
+### 3. Rodar o Ambiente de Desenvolvimento
+Para iniciar o ambiente de desenvolvimento, utilize o comando:
 
-## Requisitos Técnicos para a entrega do teste
+```bash
+npm start
+```
 
-•	Pode utilizar qualquer library de CSS e CSS-in-JS. (recomendamos Material UI, Bootstrap ou Styled Components. Pode fazer com CSS clássico também)
+Isso irá iniciar a aplicação em modo de desenvolvimento. Abra [http://localhost:3000](http://localhost:3000) para visualizar no navegador.
 
-•	O projeto deve ter uma documentação em readme ensinando a: 
-1. instalar o projeto na máquina (engines, versão de node, qual gerenciador de pacote usar)
-2. instalar as dependências do projeto
-3. rodar o ambiente de desenvolvimento
-4. rodar a build de deploy da aplicação.
+---
 
-•	Pode utilizar tanto o Axios quanto ou Fetch para requisições.
+### Ferramentas e Bibliotecas Utilizadas
+- React: ^18.3.1
+- React DOM: ^18.3.1
+- React Router DOM: ^6.23.1
+- Axios: ^1.7.2
+- Styled-components: ^6.1.11
+- React Icons: ^5.2.1
+- @smastrom/react-rating: ^1.5.0
+- @testing-library/jest-dom: ^5.17.0
+- @testing-library/react: ^13.4.0
+- @testing-library/user-event: ^13.5.0
+- React Scripts: 5.0.1
+- Web Vitals: ^2.1.4
 
-•	Hospedar o projeto em um servidor (Heroku, Vercel, Netlify)
+### Navegadores Suportados
 
-## Diferenciais técnicos
+#### Desenvolvimento
+- Última versão do Chrome
+- Última versão do Firefox
+- Última versão do Safari
 
-•	Utilização de typescript
+### Contribuição
+- Sinta-se à vontade para abrir issues e pull requests. Contributions são bem-vindas!
 
-•	Bom uso de context api ou outro gerenciamento de estados
-
-Boa sorte!
+- Feito com ❤️ por [Laysa Gomes](www.linkedin.com/in/laysa-gomes-474285232)
