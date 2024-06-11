@@ -30,6 +30,6 @@ npm install -g serve
 ```bash
 serve -s dist
 ```
-Link do deploy https://hiring-front-end-seven.vercel.app
+Link do deploy https://vnw-loja.vercel.app
 
 

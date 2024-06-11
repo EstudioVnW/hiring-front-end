@@ -27,7 +27,7 @@ export default function CardsContainer() {
     <div className="grid lg:grid-cols-5 gap-5 flex-wrap justify-center md:grid-cols-3 grid-cols-1 justify-items-center min-h-[80vh]">
       {sortedData && sortedData.map(item => <Card key={item.id} {...item} />)}
       {searchParams && sortedData.length === 0 && (
-        <p className="text-xl ">Produto não encontrado</p>
+        <p className="text-xl mt-10">Produto não encontrado</p>
       )}
     </div>
   )

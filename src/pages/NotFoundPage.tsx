@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function NotFoundPage() {
   const navigate = useNavigate()
-  const [count, setCount] = useState(10)
+  const [count, setCount] = useState(5)
   const timeout = useRef<NodeJS.Timeout | undefined>(undefined)
 
   useEffect(() => {
