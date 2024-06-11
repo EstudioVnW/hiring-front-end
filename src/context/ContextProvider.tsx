@@ -5,7 +5,6 @@ import { createContext, useContext, useEffect, useState } from 'react'
 const StateContext = createContext<Product[] | []>([])
 
 const url = 'https://62d742f351e6e8f06f1a83da.mockapi.io/api/produtos'
-
 type ContextProviderProps = {
   children: React.ReactNode
 }
@@ -36,6 +35,5 @@ export default function ContextProvider({ children }: ContextProviderProps) {
 
   return <StateContext.Provider value={data}>{children}</StateContext.Provider>
 }
-
 // eslint-disable-next-line react-refresh/only-export-components
 export const useStateContext = () => useContext(StateContext)
