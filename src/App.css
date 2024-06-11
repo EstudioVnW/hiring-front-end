@@ -1,0 +1,48 @@
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(15, 23, 42);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(15, 23, 42) #f1f1f1;
+}
+
+.bg-custom {
+  background-image: url('/hero.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}
+
+@media (max-width: 614px) {
+  .bg-custom {
+    background-image: url('/hero-sm.jpg');
+    background-size: contain;
+  }
+}
+@media (max-width: 1024px) {
+  .bg-custom {
+    height: 250px;
+  }
+}
+@media (min-width: 1980px) {
+  .bg-custom {
+    background-size: contain;
+  }
+}
