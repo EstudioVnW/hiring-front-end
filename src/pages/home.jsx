@@ -30,13 +30,7 @@ export default function ECommerce() {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
-
-  useEffect(() => {
-    if (cart.length !== 0 || getItem("itemInCart").length !== 0)
-      setCart(getItem("itemInCart"));
-    else setCart([]);
-  }, []);
+  }, [cart]);
 
   const productsFiltred = products.filter((item) =>
     item.name.toLocaleLowerCase().includes(filterValue.toLocaleLowerCase())
@@ -97,7 +91,7 @@ export default function ECommerce() {
             <S.CardContainer>
               {verifyItemSeach ? (
                 productsFiltred &&
-                productsFiltred.map((product) => {
+                productsFiltred.map((product, index) => {
                   return (
                     <S.Card key={product.id}>
                       <S.CardImage src={product.avatar} alt={product.name} />
