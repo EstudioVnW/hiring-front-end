@@ -1,30 +1,34 @@
-# React + TypeScript + Vite
+## Instalando o projeto na máquina e rodando como desenvolvedor e produção
+### Necessario ter:
+node: versão 20+
+npm : versão 10+
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. Abra o terminal em alguma pasta de 
+```bash
+git clone -b projeto https://github.com/LordGhapa/hiring-front-end
+```
+2. Entrando na pasta
+```bash
+cd hiring-front-end
+```
+3. Instalando dependências
+```bash
+npm i
+```
+4. Iniciando em modo de desenvolvimento
+```bash
+npm run dev
+```
+5. Fazendo build
+```bash
+npm run build
+```
+6. iniciando o build
+```bash
+npm install -g serve
+```
+```bash
+serve -s dist
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+

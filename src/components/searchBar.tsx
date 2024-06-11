@@ -39,6 +39,7 @@ function SearchBar() {
         onChange={e => setSearchTerm(e.target.value)}
       />
       <button
+        title="botão de pesquisa"
         type="submit"
         className="text-black bg-[#febd69] hover:bg-[#c49251]  transition-all ease-in-out p-1 rounded-br-md rounded-tr-md "
       >

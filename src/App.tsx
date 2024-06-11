@@ -1,20 +1,21 @@
-
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import HomePage from './components/Home'
-import Header from './components/header'
-import ProductPage from './Product'
+import { BrowserRouter } from 'react-router-dom'
 
+import Header from './components/header'
+
+import { Toaster } from './components/ui/toaster'
+import Footer from './components/footer'
+
+import AllRoutes from './AllRoutes'
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Toaster />
         <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/product/:id" element={<ProductPage />} />
-        </Routes>
+        <AllRoutes />
+        <Footer />
       </BrowserRouter>
     </>
   )

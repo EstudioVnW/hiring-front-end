@@ -19,7 +19,7 @@ export default function ContextProvider({ children }: ContextProviderProps) {
     fetch(url)
       .then(async response => {
         if (!response.ok) {
-          throw new Error('Failed to fetch data')
+          throw new Error('Error ao tenta fazer fetch')
         }
         setData(await response.json())
       })
