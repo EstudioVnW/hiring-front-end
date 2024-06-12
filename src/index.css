@@ -197,10 +197,9 @@ button{
   width: 5vw;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 400px) and (max-width: 600px) {
   
   .search-bar-content{
-    
     justify-content: center;
     width: 10vw;
     padding: 3rem;
@@ -211,7 +210,7 @@ button{
     margin-top: 80px;
   }
   .search-bar button {
-    width: 50%; 
+    width: 80%; 
   }
 
   .home h1{
@@ -228,6 +227,8 @@ button{
     backdrop-filter: blur(20px);
     transition: 250ms;
     background-color: #fdde9b4f;
+    margin-right: 25px;
+  
   }
 
   .product-list{
