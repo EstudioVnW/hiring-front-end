@@ -5,6 +5,8 @@ import SearchBar from '../components/SearchBar';
 import { API } from '../constants/api.jsx';
 import Cart from '../components/Cart.jsx';
 import { AiOutlineClear } from "react-icons/ai";
+import Header from '../components/Header/Header.jsx';
+import Footer from '../components/Footer/Footer.jsx';
 
 
 const Home = () => {
@@ -60,6 +62,9 @@ const Home = () => {
 
   return (
     <div className="home">
+
+     <Header />
+
       <h1>Escolha seus produtos</h1>
       
       <div className='search-bar-content'>
@@ -81,6 +86,8 @@ const Home = () => {
       </div>
       
       <Cart cartItems={cartItems} />
+
+      <Footer />
     </div>
   );
 };

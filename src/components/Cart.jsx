@@ -8,6 +8,8 @@ const Cart = ({ cartItems }) => {
 
   return (
     <div className="cart">
+      
+
       <p>Total de Itens: {totalItems}</p>
       <div>
         <FaShoppingCart />
