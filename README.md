@@ -1,51 +1,42 @@
+# E-Comerce
+[Link do Projeto](https://hiring-front-end-wheat.vercel.app/)
 
-## Objetivo
-Construir uma aplicação web em ReactJS que tenha o comportamento de um e-commerce.
+### API Utilizada
+[API](https://62d742f351e6e8f06f1a83da.mockapi.io/api/produtos)
 
-## Como começar
-Dar um fork no projeto, clonar o repositório em sua máquina local e criar um branch novo para o seu código.
+### instalação dos pacotes utilizados
 
+é aconcelhavel a instalação do seguintes pacotes
 
-## Regras de negócio
-•	Ao acessar a home, trazer a listagem de produtos vinda da API de referência.  
+``` Npm
+npm install
+```
+``` React Routes DOM
+npm i react-router-dom
+```
+``` React Icons
+npm install react-icons --save
+```
 
-•	Ao digitar no campo de busca, deve-se trazer somente os resultados digitados.  
+### Versões
 
-•	Ao clicar no botão "Adicionar ao carrinho", deve-se inserir o produto ao carrinho de compras.  
+- React 18.2.0
+- React DOM 18.2.0
+- React Router DOM 6.23.1
+- EsLint 8.57.0
 
-•	No carrinho de compras, pode-se remover os produtos.  
+### Utilização do ambiente de desenvolvimento
 
-•	No carrinho de compras, deve-se informar o total da compra.
+utilize o terminal
+```
+npm run dev
+```
+acesse pelo navegador com (localhost:5173)
 
+### Rotas
 
-## Referências
-•	API de produtos: https://62d742f351e6e8f06f1a83da.mockapi.io/api/produtos
+- / **(rota principal)**
+- /cart **(rota com carrinho de itens)**
 
-
-## Observações
-1. Não é necessário se preocupar com CORS ou implementar um backend para fazer as requisições. A API de produtos permite chamadas diretas do navegador.
-
-2. Design de livre escolha.
-
-
-## Requisitos Técnicos para a entrega do teste
-
-•	Pode utilizar qualquer library de CSS e CSS-in-JS. (recomendamos Material UI, Bootstrap ou Styled Components. Pode fazer com CSS clássico também)
-
-•	O projeto deve ter uma documentação em readme ensinando a: 
-1. instalar o projeto na máquina (engines, versão de node, qual gerenciador de pacote usar)
-2. instalar as dependências do projeto
-3. rodar o ambiente de desenvolvimento
-4. rodar a build de deploy da aplicação.
-
-•	Pode utilizar tanto o Axios quanto ou Fetch para requisições.
-
-•	Hospedar o projeto em um servidor (Heroku, Vercel, Netlify)
-
-## Diferenciais técnicos
-
-•	Utilização de typescript
-
-•	Bom uso de context api ou outro gerenciamento de estados
-
-Boa sorte!
+### contato
+[Linkedin](https://www.linkedin.com/in/elisangela-andrade-2b7053224)
