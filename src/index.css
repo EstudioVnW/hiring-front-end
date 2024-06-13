@@ -55,6 +55,8 @@ body {
   display: inline-block;
   border-radius: 0 40% 40% 0;
   border: none;
+  background-color: rgb(253, 213, 159);
+  
 }
 
 .product-list {
@@ -92,27 +94,38 @@ body {
 .cart {
   position: fixed;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  top: 10px;
+  top: 30px;
   right: 20px;
   border-radius: 5px;
   padding: 0.3rem 0;
-  width: 170px;
+  width: 60px;
   background-color: #ff662962;
   backdrop-filter: blur(20px);
   transition: 250ms;
   z-index: 1000;
 }
 
-.cart div{
+.cart-link {
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  gap: 1rem;
+  color: #333;
+  text-decoration: none;
 }
+
+.cart-icon {
+  font-size: 24px; 
+}
+
+.cart-count {
+  margin-left: 8px; 
+  font-size: 16px; 
+  color: red;
+}
+
+/*página do carrinho*/
 
 .cart-page {
   padding: 20px;
@@ -178,6 +191,7 @@ body {
   padding: 5px;
   cursor: pointer;
   border-radius: 5px;
+  
 }
 
 .btCart:hover, .btCardPage:hover{
@@ -194,7 +208,7 @@ button{
 }
 
 .btCardPage{
-  width: 5vw;
+  width: 8vw;
 }
 
 @media (min-width: 400px) and (max-width: 600px) {
@@ -220,21 +234,23 @@ button{
   }
 
   .cart {
-    justify-content: center;
+    position: fixed;
+    display: flex;
     flex-direction: row;
-    margin-top: 140px;
-    width: 330px;
-    backdrop-filter: blur(20px);
-    transition: 250ms;
-    background-color: #fdde9b4f;
-    margin-right: 25px;
-  
+    justify-content: center;
+    align-items: center;
+    top: 30px;
+    width: 50px;
+   
   }
 
   .product-list{
     margin-top: -80px;
   }
 
+  .btCardPage{
+    width: 12vw;
+  }
  
 }
 

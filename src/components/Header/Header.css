@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   background-color: #fdde9b;
   color: white;
@@ -17,6 +17,7 @@
   display: flex;
   justify-content: center;
   margin: 0;
+  margin-right: 250px;
   padding: 0;
     
 }
@@ -38,7 +39,8 @@
 }
 
 .logo{
-    width: 10vw;
+    margin-left: 35px;
+    width: 8vw;
 }
 
 @media (max-width: 600px){
@@ -48,6 +50,13 @@
 
  .header{
     height: 8vh;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    gap: 30px;
+    top: 0;
+    z-index: 900;
+
  }
 
 }

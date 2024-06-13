@@ -14,7 +14,6 @@ const Home = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(API)
@@ -48,16 +47,6 @@ const Home = () => {
     const updatedCartItems = [...cartItems, product];
     setCartItems(updatedCartItems);
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-  };
-
-  const handleRemoveFromCart = productId => {
-    const updatedCartItems = cartItems.filter(item => item.id !== productId);
-    setCartItems(updatedCartItems);
-    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-  };
-
-  const handleViewCart = () => {
-    navigate('/cart', { state: { handleRemoveFromCart } });
   };
 
   return (

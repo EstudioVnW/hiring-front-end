@@ -9,14 +9,12 @@ const Cart = ({ cartItems }) => {
   return (
     <div className="cart">
       
-
-      <p>Total de Itens: {totalItems}</p>
-      <div>
-        <FaShoppingCart />
-        <Link to="/cart" state={{ cartItems }}>
-          <button className='btCart'>Ver Carrinho</button>
-        </Link>
-      </div>
+        <Link to="/cart" state={{ cartItems }} className="cart-link">
+        <FaShoppingCart className="cart-icon" />
+        {totalItems > 0 && (
+          <span className="cart-count">{totalItems}</span>
+        )}
+      </Link>
     </div>
   );
 };
