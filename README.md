@@ -7,7 +7,6 @@
 ### resumo do projeto
 ##### Utilização do Fetch para requisição a api
     O link da api fornecina está isolada em uma constante na pasta constants
-    coloquei um timeOut com um espaço de 1 segundo para cada card onde vai renderizar a imagem separadamente
 ##### Arquitetura do Projeto
 
 ``` Arquitetura

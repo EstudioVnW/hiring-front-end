@@ -14,27 +14,14 @@ const Home = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch(API);
-      const data = await response.json();
-
-      const updatedProducts = data.map((product) => ({
-        ...product,
-        avatar: `${product.avatar}?${new Date().getTime()}`,
-      }));
-
-      for (let i = 0; i < updatedProducts.length; i++) {
-        setTimeout(() => {
-          setProducts((prevProducts) => [...prevProducts, updatedProducts[i]]);
-          setFilteredProducts((prevProducts) => [...prevProducts, updatedProducts[i]]);
-        }, i * 1000);
-      }
-    };
-
-    fetchProducts();
+    fetch(API)
+      .then(response => response.json())
+      .then(data => {
+        setProducts(data);
+        setFilteredProducts(data);
+      });
 
     const storedCartItems = localStorage.getItem('cartItems');
     if (storedCartItems) {
@@ -60,16 +47,6 @@ const Home = () => {
     const updatedCartItems = [...cartItems, product];
     setCartItems(updatedCartItems);
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-  };
-
-  const handleRemoveFromCart = productId => {
-    const updatedCartItems = cartItems.filter(item => item.id !== productId);
-    setCartItems(updatedCartItems);
-    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
-  };
-
-  const handleViewCart = () => {
-    navigate('/cart', { state: { handleRemoveFromCart } });
   };
 
   return (
