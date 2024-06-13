@@ -17,12 +17,24 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(API)
-      .then(response => response.json())
-      .then(data => {
-        setProducts(data);
-        setFilteredProducts(data);
-      });
+    const fetchProducts = async () => {
+      const response = await fetch(API);
+      const data = await response.json();
+
+      const updatedProducts = data.map((product) => ({
+        ...product,
+        avatar: `${product.avatar}?${new Date().getTime()}`,
+      }));
+
+      for (let i = 0; i < updatedProducts.length; i++) {
+        setTimeout(() => {
+          setProducts((prevProducts) => [...prevProducts, updatedProducts[i]]);
+          setFilteredProducts((prevProducts) => [...prevProducts, updatedProducts[i]]);
+        }, i * 1000);
+      }
+    };
+
+    fetchProducts();
 
     const storedCartItems = localStorage.getItem('cartItems');
     if (storedCartItems) {
