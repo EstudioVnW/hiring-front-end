@@ -28,5 +28,5 @@ npm run dev
 
 ## Deploy
 
-Link:https://hiring-front-l5ne3fmgi-julias-projects-86781e21.vercel.app/
+Link:https://hiring-front-end-omega.vercel.app/
 Meu Linkedin: https://www.linkedin.com/in/julia-h-99bb39137/
