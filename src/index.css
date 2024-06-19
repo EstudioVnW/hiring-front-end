@@ -31,8 +31,17 @@ body {
 .search-bar-content button{
   display: flex;
   flex-direction: row;
-  border-radius: 0 8px 8px 0;
   padding: 0.4rem;
+  background-color: #fdde9b;
+}
+
+.search-bar-content button:hover{
+  background-color: #f8cd71;
+}
+
+.btClear{
+  border-radius: 0 8px 8px 0;
+  height: 4vh;
 }
 
 .search-bar-content input{
@@ -50,7 +59,7 @@ body {
   margin-bottom: 20px;
   width: 50vw;
   height: 4vh;
-  background-color: #fdde9b;
+ 
 }
   
 .product-list {
@@ -69,8 +78,27 @@ body {
   margin-top: 10px;
   border: 1px solid rgba(255, 255, 255, 0.3); 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  backdrop-filter: blur(30px); 
   color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease, filter 0.3s ease; 
+  will-change: transform; 
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+  filter: none; 
 }
 
 .product-card p{
@@ -219,8 +247,13 @@ button{
   }
 
   .search-bar button {
-   
     height: 3vh; 
+  }
+  .btClear{
+    height: 4vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   input{
@@ -252,6 +285,7 @@ button{
 
   .product-card{
     margin-top: 40px;
+    backdrop-filter: none; 
   }
   
 

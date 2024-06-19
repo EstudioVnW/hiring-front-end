@@ -3,6 +3,7 @@ import ProductCard from '../components/ProductCard';
 import { FaSearch } from "react-icons/fa";
 import { API } from '../constants/api.jsx';
 import Cart from '../components/Cart.jsx';
+import { AiOutlineClear } from "react-icons/ai";
 import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 
@@ -57,6 +58,11 @@ const Home = () => {
     );
   };
 
+  const handleClearSearch = () => {
+    setSearchQuery('');
+    setFilteredProducts(products);
+  };
+
   const handleAddToCart = (product) => {
     const updatedCartItems = [...cartItems, product];
     setCartItems(updatedCartItems);
@@ -80,6 +86,11 @@ const Home = () => {
         <button className='search-bar' onClick={performSearch}>
          <FaSearch />
           Buscar
+        </button>
+
+        <button className='btClear' onClick={handleClearSearch}>
+          <AiOutlineClear />
+          Limpar
         </button>
       </div>
       
