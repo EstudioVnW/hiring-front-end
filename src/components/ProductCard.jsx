@@ -10,7 +10,7 @@ const ProductCard = ({ product, onAddToCart }) => {
     <div className="product-card">
       <h3>{product.name}</h3>
       <img src={addUniqueParamToImageUrl(product.avatar, product.id)} alt={product.name} />
-      <p className='description'>{product.description}</p>
+      <p className='description'>{product.desciption}</p>
       <div>
         <p>${product.price}</p>
         <button 
