@@ -25,11 +25,12 @@ body {
   width: 16vw;
   align-items: center;
   padding: 1rem;
+  gap: 1px;
 }
+
 .search-bar-content button{
   display: flex;
   flex-direction: row;
-  margin: 0.5rem;
   border-radius: 0 8px 8px 0;
   padding: 0.4rem;
 }
@@ -49,6 +50,7 @@ body {
   margin-bottom: 20px;
   width: 50vw;
   height: 4vh;
+  background-color: #fdde9b;
 }
   
 .product-list {
@@ -69,7 +71,6 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   backdrop-filter: blur(30px); 
   color: white;
- 
 }
 
 .product-card p{
@@ -216,14 +217,19 @@ button{
   .home{
     margin-top: 80px;
   }
-  .search-bar  {
-    width: 90%; 
-    height: 3.5vh;
+
+  .search-bar button {
+   
+    height: 3vh; 
   }
 
+  input{
+    height: 2.5vh;
+  }
   .home h1{
     font-size: 1.5rem;
     margin-top: 30px;
+    
   }
 
   .cart {
@@ -234,7 +240,6 @@ button{
     align-items: center;
     top: 30px;
     width: 50px;
-   
   }
 
   .product-list{
@@ -246,8 +251,9 @@ button{
   }
 
   .product-card{
-    margin-top: 50px;
+    margin-top: 40px;
   }
- 
+  
+
 }
 
