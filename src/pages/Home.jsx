@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
-import SearchBar from '../components/SearchBar';
+import { FaSearch } from "react-icons/fa";
 import { API } from '../constants/api.jsx';
 import Cart from '../components/Cart.jsx';
-import { AiOutlineClear } from "react-icons/ai";
 import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 
@@ -14,6 +12,7 @@ const Home = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  
 
   useEffect(() => {
     fetch(API)
@@ -28,22 +27,37 @@ const Home = () => {
       setCartItems(JSON.parse(storedCartItems));
     }
   }, []);
+  
 
-  const handleSearch = query => {
+  const handleSearchChange = (event) => {
+    const query = event.target.value;
     setSearchQuery(query);
-    setFilteredProducts(
-      products.filter(product => 
+
+    if (query.trim === '') {
+      setFilteredProducts(products);
+    } else {
+      const filtered = products.filter(product =>
         product.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredProducts(filtered);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      performSearch();
+    }
+  };
+
+  const performSearch = () => {
+    setFilteredProducts(
+      products.filter(product =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase())
       )
     );
   };
 
-  const handleClearSearch = () => {
-    setSearchQuery('');
-    setFilteredProducts(products);
-  };
-
-  const handleAddToCart = product => {
+  const handleAddToCart = (product) => {
     const updatedCartItems = [...cartItems, product];
     setCartItems(updatedCartItems);
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
@@ -51,16 +65,21 @@ const Home = () => {
 
   return (
     <div className="home">
-
-     <Header />
-
+      <Header />
       <h1>Escolha seus produtos</h1>
-      
+
       <div className='search-bar-content'>
-        <SearchBar className onSearch={handleSearch} />
-        <button onClick={handleClearSearch}>
-          <AiOutlineClear/>
-          Limpar
+        <input 
+          type="text"
+          value={searchQuery}
+          onChange={handleSearchChange}
+          onKeyDown={handleKeyDown}
+          placeholder="Buscar produtos..."
+          
+        />
+        <button className='search-bar' onClick={performSearch}>
+         <FaSearch />
+          Buscar
         </button>
       </div>
       
