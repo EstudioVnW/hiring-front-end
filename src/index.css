@@ -69,6 +69,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   backdrop-filter: blur(30px); 
   color: white;
+ 
 }
 
 .product-card p{
@@ -215,14 +216,14 @@ button{
   .home{
     margin-top: 80px;
   }
-  .search-bar button {
-    width: 80%; 
+  .search-bar  {
+    width: 90%; 
+    height: 3.5vh;
   }
 
   .home h1{
     font-size: 1.5rem;
     margin-top: 30px;
-    
   }
 
   .cart {
@@ -242,6 +243,10 @@ button{
 
   .btCardPage{
     width: 12vw;
+  }
+
+  .product-card{
+    margin-top: 50px;
   }
  
 }
